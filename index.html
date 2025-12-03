@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Health Dashboard — Vishen Lakhiani | December 2025</title>
+  <meta name="description" content="Comprehensive health dashboard for Vishen Lakhiani featuring blood work analysis, longevity optimization, supplement stack, and personalized meal planning." />
+  <meta name="keywords" content="health dashboard, blood work analysis, longevity, supplement optimization, personalized health" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Health Dashboard — Vishen Lakhiani" />
+  <meta property="og:description" content="Your comprehensive health optimization dashboard" />
+  <meta property="og:site_name" content="Mindvalley" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#c4dd00" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Navigation Sidebar */
+    .nav-sidebar {
+      width: 280px;
+      background: #181d26;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      padding: 2rem 0;
+      color: white;
+      z-index: 1000;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-profile {
+      padding: 0 2rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .nav-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #232d14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border: 3px solid #c4dd00;
+    }
+
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background: rgba(196, 221, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .nav-link.active {
+      background: rgba(196, 221, 0, 0.15);
+      font-weight: 700;
+      border-left: 3px solid #c4dd00;
+      margin-left: -3px;
+    }
+
+    .nav-icon {
+      font-size: 1.5rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 280px;
+      flex: 1;
+      padding: 3rem;
+      max-width: 1400px;
+    }
+
+    /* Hero Stats Grid */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(196, 221, 0, 0.15);
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #84cc16, #c4dd00);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0f131a;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-status {
+      font-size: 0.875rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .stat-status.excellent {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .stat-status.good {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .stat-status.warning {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      background: linear-gradient(135deg, #181d26 0%, #232d14 100%);
+      color: white;
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .welcome-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .welcome-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .welcome-greeting {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .welcome-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .welcome-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.95;
+      max-width: 700px;
+    }
+
+    /* Insights Grid */
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .insight-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(196, 221, 0, 0.15);
+    }
+
+    .insight-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .insight-icon {
+      font-size: 2rem;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(196, 221, 0, 0.1) 0%, #e8e0f0 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .insight-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f131a;
+    }
+
+    .insight-content {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+    }
+
+    .insight-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #232d14;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .insight-action:hover {
+      transform: translateX(4px);
+    }
+
+    /* Quick Links Section */
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .quick-link-card {
+      background: linear-gradient(135deg, rgba(196, 221, 0, 0.1) 0%, #e8e0f0 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      text-decoration: none;
+      color: #0f131a;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .quick-link-card:hover {
+      transform: scale(1.05);
+      border-color: #232d14;
+      background: linear-gradient(135deg, #e8e0f0 0%, #dcd2e8 100%);
+    }
+
+    .quick-link-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .quick-link-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .nav-sidebar.mobile-open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+      }
+
+      .mobile-menu-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 999;
+        background: linear-gradient(135deg, #7a12d4, #9333ea);
+        color: white;
+        border: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(122, 18, 212, 0.3);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .welcome-title {
+        font-size: 1.75rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" onclick="toggleMobileNav()" style="display: none;">☰</button>
+
+  <!-- Navigation Sidebar -->
+  <nav class="nav-sidebar" id="navSidebar">
+    <div class="nav-profile">
+      <div class="nav-avatar">🌟</div>
+      <div class="nav-name">Vishen Lakhiani</div>
+      <div class="nav-subtitle">Male, 49 years old</div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link active">
+          <span class="nav-icon">🏠</span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="blood-work.html" class="nav-link">
+          <span class="nav-icon">🩸</span>
+          <span>Blood Work</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="key-markers.html" class="nav-link">
+          <span class="nav-icon">🎯</span>
+          <span>Key Markers</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="health-kit.html" class="nav-link">
+          <span class="nav-icon">📱</span>
+          <span>Health Kit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="longevity.html" class="nav-link">
+          <span class="nav-icon">⏳</span>
+          <span>Longevity</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="supplements.html" class="nav-link">
+          <span class="nav-icon">💊</span>
+          <span>Supplements</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="meal-plan.html" class="nav-link">
+          <span class="nav-icon">🍽️</span>
+          <span>Meal Plan</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+      <div class="welcome-content">
+        <div class="welcome-greeting">Welcome Back, Vishen</div>
+        <h1 class="welcome-title">Your Health is Your Greatest Asset</h1>
+        <p class="welcome-subtitle">
+          Based on your October 2025 blood work and comprehensive health analysis, here's your personalized health dashboard. You're thriving in many areas—let's optimize even further.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hero Stats -->
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-icon">❤️</span>
+        <div class="stat-label">Metabolic Health</div>
+        <div class="stat-value">A+</div>
+        <span class="stat-status excellent">HbA1c 4.9%</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-icon">🔥</span>
+        <div class="stat-label">Inflammation</div>
+        <div class="stat-value">Low</div>
+        <span class="stat-status excellent">CRP &lt;5</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-icon">🧬</span>
+        <div class="stat-label">Testosterone</div>
+        <div class="stat-value">30.5</div>
+        <span class="stat-status excellent">nmol/L</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-icon">📊</span>
+        <div class="stat-label">Overall Score</div>
+        <div class="stat-value">85%</div>
+        <span class="stat-status good">Room to Optimize</span>
+      </div>
+    </div>
+
+    <!-- Key Insights -->
+    <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; color: #0f131a;">Recent Insights</h2>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-header">
+          <div class="insight-icon">⚠️</div>
+          <h3 class="insight-title">LDL Cholesterol</h3>
+        </div>
+        <div class="insight-content">
+          Your LDL is elevated at 170.98 mg/dL (target &lt;100). However, your TG/HDL ratio of 1.86 is excellent, suggesting larger, less harmful LDL particles. Let's optimize this.
+        </div>
+        <a href="blood-work.html" class="insight-action">
+          View Details →
+        </a>
+      </div>
+
+      <div class="insight-card">
+        <div class="insight-header">
+          <div class="insight-icon">💪</div>
+          <h3 class="insight-title">SHBG Elevated</h3>
+        </div>
+        <div class="insight-content">
+          Your SHBG is 66.9 nmol/L (elevated), binding too much testosterone. Increasing Boron to 6mg and adding Stinging Nettle can help free up more T.
+        </div>
+        <a href="supplements.html" class="insight-action">
+          See Recommendations →
+        </a>
+      </div>
+
+      <div class="insight-card">
+        <div class="insight-header">
+          <div class="insight-icon">🌟</div>
+          <h3 class="insight-title">Metabolic Excellence</h3>
+        </div>
+        <div class="insight-content">
+          Your HbA1c of 4.9% is exceptional. Your Berberine and low-carb approach are working beautifully. Keep this foundation strong.
+        </div>
+        <a href="longevity.html" class="insight-action">
+          Learn More →
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Action Links -->
+    <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 2rem; margin-top: 3rem; color: #0f131a;">Quick Actions</h2>
+
+    <div class="quick-links">
+      <a href="blood-work.html" class="quick-link-card">
+        <span class="quick-link-icon">📊</span>
+        <div class="quick-link-title">Blood Markers</div>
+      </a>
+
+      <a href="longevity.html" class="quick-link-card">
+        <span class="quick-link-icon">🧬</span>
+        <div class="quick-link-title">9 Hallmarks</div>
+      </a>
+
+      <a href="supplements.html" class="quick-link-card">
+        <span class="quick-link-icon">✅</span>
+        <div class="quick-link-title">Daily Checklist</div>
+      </a>
+
+      <a href="meal-plan.html" class="quick-link-card">
+        <span class="quick-link-icon">🥗</span>
+        <div class="quick-link-title">This Week's Meals</div>
+      </a>
+    </div>
+
+    <!-- Progress Summary -->
+    <div style="background: white; border-radius: 24px; padding: 3rem; margin-top: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);">
+      <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; color: #0f131a;">Your Health Journey</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 2rem;">
+        You're not starting from zero. Your blood work shows an incredible foundation: exceptional metabolic health, low inflammation, strong hormones. The optimizations we're making aren't about fixing problems—they're about taking an already sophisticated system and making it even better.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+        <div>
+          <div style="font-size: 0.875rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Excellent Markers</div>
+          <div style="font-size: 2rem; font-weight: 800; color: #22c55e;">12</div>
+        </div>
+        <div>
+          <div style="font-size: 0.875rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">To Optimize</div>
+          <div style="font-size: 2rem; font-weight: 800; color: #f59e0b;">4</div>
+        </div>
+        <div>
+          <div style="font-size: 0.875rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Active Supplements</div>
+          <div style="font-size: 2rem; font-weight: 800; color: #232d14;">30</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Mobile Navigation Toggle
+    function toggleMobileNav() {
+      document.getElementById('navSidebar').classList.toggle('mobile-open');
+    }
+
+    // Show mobile menu button on small screens
+    function checkScreenSize() {
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      if (window.innerWidth <= 1024) {
+        mobileBtn.style.display = 'block';
+      } else {
+        mobileBtn.style.display = 'none';
+        document.getElementById('navSidebar').classList.remove('mobile-open');
+      }
+    }
+
+    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('load', checkScreenSize);
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navSidebar');
+      const btn = document.querySelector('.mobile-menu-btn');
+
+      if (window.innerWidth <= 1024 &&
+          !nav.contains(event.target) &&
+          !btn.contains(event.target) &&
+          nav.classList.contains('mobile-open')) {
+        nav.classList.remove('mobile-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

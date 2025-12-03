@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Your Personal Health Journey — Vishen | December 2025</title>
+  <meta name="description" content="A comprehensive, caring analysis of your supplement stack and health markers. Understanding your body, optimizing your vitality." />
+  <meta name="keywords" content="supplement analysis, blood work, biohacking, longevity, optimization, health journey" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Your Personal Health Journey — December 2025" />
+  <meta property="og:description" content="A comprehensive, caring analysis of your supplement stack and health markers." />
+  <meta property="og:site_name" content="Mindvalley" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#7a12d4" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    /* Reset & Base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+      line-height: 1.7;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes progressBar {
+      from { width: 0; }
+      to { width: var(--progress-width); }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+
+    /* Hero Section - Apple Style */
+    .hero-section {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 50%, #a855f7 100%);
+      color: white;
+      padding: 5rem 0 6rem;
+      margin-bottom: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-emoji {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.375rem;
+      line-height: 1.6;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-weight: 400;
+    }
+
+    /* Health Score Dashboard */
+    .health-dashboard {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-top: 3rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+    }
+
+    .dashboard-item {
+      text-align: center;
+    }
+
+    .dashboard-value {
+      font-size: 2.75rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .dashboard-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+
+    .dashboard-status {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      opacity: 0.85;
+    }
+
+    /* Card System - Liquid Glass */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.05),
+        0 10px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.08),
+        0 20px 60px rgba(122, 18, 212, 0.12);
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7a12d4, #9333ea, #a855f7);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      color: #7a12d4;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: #4b5563;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Empathy Boxes */
+    .empathy-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid #22c55e;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .empathy-box::before {
+      content: '💚';
+      position: absolute;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 4rem;
+      opacity: 0.15;
+    }
+
+    .empathy-box.warning {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border-left-color: #f59e0b;
+    }
+
+    .empathy-box.warning::before {
+      content: '💛';
+    }
+
+    .empathy-box.info {
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-left-color: #7a12d4;
+    }
+
+    .empathy-box.info::before {
+      content: '💜';
+    }
+
+    .empathy-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f131a;
+    }
+
+    .empathy-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    /* Category Cards */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(122, 18, 212, 0.15);
+      border-color: #7a12d4;
+    }
+
+    .category-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .category-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f131a;
+    }
+
+    .category-status {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .category-score {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #f0fdf4;
+      border-radius: 12px;
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: #166534;
+    }
+
+    .category-score.warning {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .category-score.excellent {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    /* Visual Progress Bars */
+    .progress-container {
+      margin: 1.5rem 0;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .progress-bar-wrapper {
+      height: 12px;
+      background: #f3f4f6;
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #7a12d4, #9333ea);
+      border-radius: 100px;
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: progressBar 1.5s ease-out forwards;
+      --progress-width: 0%;
+    }
+
+    .progress-bar.excellent {
+      background: linear-gradient(90deg, #22c55e, #16a34a);
+    }
+
+    .progress-bar.good {
+      background: linear-gradient(90deg, #3b82f6, #2563eb);
+    }
+
+    .progress-bar.warning {
+      background: linear-gradient(90deg, #f59e0b, #d97706);
+    }
+
+    .progress-bar.needs-attention {
+      background: linear-gradient(90deg, #ef4444, #dc2626);
+    }
+
+    /* Blood Marker Visualization */
+    .marker-visual {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: #fafbff;
+      border-radius: 16px;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .marker-visual:hover {
+      background: #f5f0fa;
+      transform: translateX(4px);
+    }
+
+    .marker-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .marker-info {
+      flex: 1;
+    }
+
+    .marker-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+      color: #0f131a;
+    }
+
+    .marker-value {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .marker-status {
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .marker-status.optimal {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .marker-status.good {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .marker-status.attention {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .marker-status.high {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    /* Understanding Expandable Sections */
+    .understanding-section {
+      background: #fafbff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 2px solid #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .understanding-section:hover {
+      border-color: #7a12d4;
+      background: #f5f0fa;
+    }
+
+    .understanding-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .understanding-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #7a12d4;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .understanding-toggle {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .understanding-toggle.open {
+      transform: rotate(180deg);
+    }
+
+    .understanding-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 0.5rem;
+    }
+
+    .understanding-content.open {
+      max-height: 1000px;
+      padding: 1.5rem 0.5rem 0;
+    }
+
+    .understanding-text {
+      line-height: 1.8;
+      color: #4b5563;
+    }
+
+    /* Supplement Badges */
+    .supplement-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0.25rem;
+    }
+
+    .supplement-badge.keep {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .supplement-badge.keep::before {
+      content: '✓';
+    }
+
+    .supplement-badge.adjust {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .supplement-badge.adjust::before {
+      content: '⚡';
+    }
+
+    .supplement-badge.add {
+      background: #e8e0f0;
+      color: #7a12d4;
+    }
+
+    .supplement-badge.add::before {
+      content: '+';
+    }
+
+    .supplement-badge.reduce {
+      background: #fae8ff;
+      color: #86198f;
+    }
+
+    .supplement-badge.reduce::before {
+      content: '↓';
+    }
+
+    /* Timeline Visualization */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #7a12d4, #a855f7);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .timeline-time {
+      flex: 1;
+      text-align: right;
+      padding-right: 2rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      color: #7a12d4;
+    }
+
+    .timeline-dot {
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #7a12d4, #a855f7);
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 4px 12px rgba(122, 18, 212, 0.3);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding-left: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Interactive Checklist */
+    .checklist-container {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      margin: 3rem 0;
+    }
+
+    .checklist-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .checklist-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+    }
+
+    .checklist-subtitle {
+      font-size: 1.125rem;
+      color: #4b5563;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: white;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .checklist-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 6px 20px rgba(122, 18, 212, 0.12);
+    }
+
+    .checklist-item.checked {
+      background: #f0fdf4;
+      opacity: 0.8;
+    }
+
+    .checklist-checkbox {
+      width: 28px;
+      height: 28px;
+      border: 3px solid #d1d5db;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      font-size: 1.25rem;
+    }
+
+    .checklist-item.checked .checklist-checkbox {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      border-color: #22c55e;
+    }
+
+    .checklist-item.checked .checklist-checkbox::after {
+      content: '✓';
+      color: white;
+      font-weight: 700;
+    }
+
+    .checklist-text {
+      flex: 1;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #1f2937;
+    }
+
+    .checklist-item.checked .checklist-text {
+      text-decoration: line-through;
+      color: #6b7280;
+    }
+
+    .checklist-priority {
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .checklist-priority.high {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .checklist-priority.medium {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .checklist-priority.low {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    /* Motivational Quote Section */
+    .motivation-section {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      padding: 4rem 3rem;
+      border-radius: 24px;
+      text-align: center;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .motivation-section::before {
+      content: '✨';
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      font-size: 3rem;
+      opacity: 0.2;
+    }
+
+    .motivation-section::after {
+      content: '💫';
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      font-size: 3rem;
+      opacity: 0.2;
+    }
+
+    .motivation-quote {
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .motivation-author {
+      font-size: 1.125rem;
+      opacity: 0.9;
+    }
+
+    /* Comparison Chart */
+    .comparison-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 1rem;
+      padding: 2rem 0;
+      height: 200px;
+    }
+
+    .chart-bar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .chart-bar-visual {
+      width: 100%;
+      background: linear-gradient(180deg, #7a12d4, #9333ea);
+      border-radius: 12px 12px 0 0;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeInUp 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    .chart-bar-visual.optimal {
+      background: linear-gradient(180deg, #22c55e, #16a34a);
+    }
+
+    .chart-bar-visual.warning {
+      background: linear-gradient(180deg, #f59e0b, #d97706);
+    }
+
+    .chart-bar-visual.high {
+      background: linear-gradient(180deg, #ef4444, #dc2626);
+    }
+
+    .chart-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      color: #4b5563;
+    }
+
+    .chart-value {
+      position: absolute;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #0f131a;
+      white-space: nowrap;
+    }
+
+    /* Priority Matrix */
+    .priority-matrix {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .priority-quadrant {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .priority-quadrant.high-impact {
+      border: 3px solid #ef4444;
+    }
+
+    .priority-quadrant.medium-impact {
+      border: 3px solid #f59e0b;
+    }
+
+    .priority-quadrant.low-impact {
+      border: 3px solid #3b82f6;
+    }
+
+    .quadrant-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quadrant-icon {
+      font-size: 2rem;
+    }
+
+    .quadrant-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f131a;
+    }
+
+    .quadrant-items {
+      list-style: none;
+    }
+
+    .quadrant-items li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      color: #4b5563;
+    }
+
+    .quadrant-items li:last-child {
+      border-bottom: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f131a;
+      color: #9ca3af;
+      padding: 4rem 0;
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.75rem 0;
+      line-height: 1.7;
+    }
+
+    footer strong {
+      color: #e5e7eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 3rem 0 4rem;
+      }
+
+      .hero-emoji {
+        font-size: 3rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.125rem;
+      }
+
+      .health-dashboard {
+        padding: 1.5rem;
+      }
+
+      .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+
+      .section-emoji {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 40px;
+      }
+
+      .timeline-time {
+        text-align: left;
+        padding-right: 0;
+        padding-bottom: 0.5rem;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 12px;
+      }
+
+      .timeline-content {
+        padding-left: 0;
+      }
+
+      .priority-matrix {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist-container {
+        padding: 1.5rem;
+      }
+
+      .motivation-section {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .motivation-quote {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+      }
+
+      .glass-card {
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+        page-break-inside: avoid;
+      }
+
+      .checklist-item:hover,
+      .category-card:hover,
+      .glass-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="mv-container">
+      <div class="hero-content animate-in">
+        <span class="hero-emoji">🌟</span>
+        <div class="hero-eyebrow">Your Personal Health Journey</div>
+        <h1 class="hero-title">Your Body is Speaking. Let's Listen Together.</h1>
+        <p class="hero-subtitle">
+          Based on your October 2025 blood work, here's a comprehensive, caring analysis of where you are, what's working beautifully, and how we can optimize even further. This isn't just data—it's your story.
+        </p>
+
+        <div class="health-dashboard animate-in animate-delay-2">
+          <div class="dashboard-grid">
+            <div class="dashboard-item">
+              <div class="dashboard-value">A+</div>
+              <div class="dashboard-label">Metabolic Health</div>
+              <div class="dashboard-status">HbA1c 4.9% 💚</div>
+            </div>
+            <div class="dashboard-item">
+              <div class="dashboard-value">⭐</div>
+              <div class="dashboard-label">Inflammation</div>
+              <div class="dashboard-status">CRP &lt;5 Excellent</div>
+            </div>
+            <div class="dashboard-item">
+              <div class="dashboard-value">30</div>
+              <div class="dashboard-label">Active Supplements</div>
+              <div class="dashboard-status">Well-Designed Stack</div>
+            </div>
+            <div class="dashboard-item">
+              <div class="dashboard-value">85%</div>
+              <div class="dashboard-label">Optimization Score</div>
+              <div class="dashboard-status">Room to Improve 🚀</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="mv-container" style="padding: 4rem 0;">
+
+    <!-- UNDERSTANDING YOUR RESULTS -->
+    <section class="glass-card animate-in">
+      <div class="section-header">
+        <span class="section-emoji">💚</span>
+        <div class="section-eyebrow">Starting with the Good News</div>
+        <h2 class="section-title">Your Body is Thriving in Many Ways</h2>
+        <p class="section-description">
+          Before we talk about what to optimize, let's celebrate what's working. Your body is responding beautifully to your current stack, and the results show it.
+        </p>
+      </div>
+
+      <div class="empathy-box">
+        <h3 class="empathy-title">You're doing something right 🎉</h3>
+        <p class="empathy-text">
+          Your metabolic health is exceptional. An HbA1c of 4.9% places you in the optimal range—your body is processing glucose beautifully. Your inflammation markers show that your anti-inflammatory stack (Curcumin, Boswellia, Omega-3) is working exactly as it should. Your liver and kidney function are pristine. These aren't accidents—they're the result of consistent, intelligent supplementation and lifestyle choices.
+        </p>
+      </div>
+
+      <!-- Category Cards -->
+      <div class="category-grid">
+        <div class="category-card animate-in animate-delay-1">
+          <span class="category-icon">❤️</span>
+          <h3 class="category-title">Cardiovascular</h3>
+          <p class="category-status">Low inflammation, good triglycerides</p>
+          <span class="category-score warning">⚠️ LDL Needs Attention</span>
+        </div>
+
+        <div class="category-card animate-in animate-delay-2">
+          <span class="category-icon">🧬</span>
+          <h3 class="category-title">Hormones</h3>
+          <p class="category-status">Strong testosterone, healthy cortisol</p>
+          <span class="category-score excellent">✓ Excellent</span>
+        </div>
+
+        <div class="category-card animate-in animate-delay-3">
+          <span class="category-icon">⚡</span>
+          <h3 class="category-title">Energy & Metabolism</h3>
+          <p class="category-status">Perfect HbA1c, optimal glucose</p>
+          <span class="category-score excellent">✓ Outstanding</span>
+        </div>
+
+        <div class="category-card animate-in animate-delay-4">
+          <span class="category-icon">🦴</span>
+          <h3 class="category-title">Bones & Joints</h3>
+          <p class="category-status">Comprehensive support stack</p>
+          <span class="category-score excellent">✓ Well-Supported</span>
+        </div>
+
+        <div class="category-card animate-in animate-delay-1">
+          <span class="category-icon">🧠</span>
+          <h3 class="category-title">Brain Health</h3>
+          <p class="category-status">Magnesium, PQQ, ALCAR stack</p>
+          <span class="category-score excellent">✓ Excellent</span>
+        </div>
+
+        <div class="category-card animate-in animate-delay-2">
+          <span class="category-icon">🌙</span>
+          <h3 class="category-title">Sleep & Recovery</h3>
+          <p class="category-status">Multiple magnesium forms</p>
+          <span class="category-score warning">⚡ Can Simplify</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOOD MARKER VISUALIZATION -->
+    <section class="glass-card animate-in">
+      <div class="section-header">
+        <span class="section-emoji">📊</span>
+        <div class="section-eyebrow">Understanding Your Numbers</div>
+        <h2 class="section-title">Your Blood Work, Visualized</h2>
+        <p class="section-description">
+          Think of these markers as conversations your body is having with you. Let's decode what they're saying.
+        </p>
+      </div>
+
+      <!-- Key Markers Comparison Chart -->
+      <div style="margin: 3rem 0;">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.25rem; color: #4b5563;">
+          Key Health Markers: Your Values vs. Optimal Range
+        </h3>
+        <div class="comparison-chart">
+          <div class="chart-bar">
+            <div class="chart-bar-visual excellent" style="height: 95%; animation-delay: 0.2s;">
+              <span class="chart-value">4.9%</span>
+            </div>
+            <span class="chart-label">HbA1c<br/>(Target: &lt;5.7)</span>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-visual warning" style="height: 75%; animation-delay: 0.4s;">
+              <span class="chart-value">51</span>
+            </div>
+            <span class="chart-label">HDL<br/>(Target: &gt;60)</span>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-visual high" style="height: 85%; animation-delay: 0.6s;">
+              <span class="chart-value">171</span>
+            </div>
+            <span class="chart-label">LDL<br/>(Target: &lt;100)</span>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-visual optimal" style="height: 70%; animation-delay: 0.8s;">
+              <span class="chart-value">41.8</span>
+            </div>
+            <span class="chart-label">Vitamin D<br/>(Target: 30-100)</span>
+          </div>
+          <div class="chart-bar">
+            <div class="chart-bar-visual excellent" style="height: 90%; animation-delay: 1s;">
+              <span class="chart-value">30.5</span>
+            </div>
+            <span class="chart-label">Testosterone<br/>(nmol/L)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="understanding-section" onclick="toggleUnderstanding(this)">
+        <div class="understanding-header">
+          <h4 class="understanding-title">
+            <span>💡</span>
+            Why Understanding These Numbers Matters
+          </h4>
+          <span class="understanding-toggle">↓</span>
+        </div>
+        <div class="understanding-content">
+          <p class="understanding-text">
+            Each of these markers tells a story. Your HbA1c shows how well your body has been managing blood sugar over the past 3 months—yours is exceptional. Your HDL (the "good" cholesterol) acts like a cleanup crew in your arteries, and while yours is decent, we can boost it higher. LDL can be problematic when elevated, but context matters—your triglyceride/HDL ratio (1.86) is excellent, suggesting your LDL particles might be the large, fluffy kind (less harmful) rather than small, dense particles. This is why advanced testing matters.
+          </p>
+        </div>
+      </div>
+
+      <!-- Individual Marker Visualizations -->
+      <div style="margin-top: 3rem;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #0f131a;">Markers Requiring Your Attention</h3>
+
+        <div class="marker-visual">
+          <span class="marker-icon">⚠️</span>
+          <div class="marker-info">
+            <div class="marker-name">LDL Cholesterol</div>
+            <div class="marker-value">Your value: 170.98 mg/dL | Optimal: &lt;100 mg/dL</div>
+          </div>
+          <span class="marker-status high">Needs Attention</span>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-label">
+            <span>Current Level</span>
+            <span>171% of optimal target</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar needs-attention" style="--progress-width: 85%;"></div>
+          </div>
+        </div>
+
+        <div class="empathy-box warning" style="margin-top: 1.5rem;">
+          <h3 class="empathy-title">Let's understand what this means 💛</h3>
+          <p class="empathy-text">
+            Elevated LDL isn't a crisis—it's a signal. Your body is processing cholesterol in a way that needs some support. The good news? You're already taking Bergamot and Omega-3, which work beautifully for this. We just need to optimize the doses. Think of LDL like traffic in your arteries—we want smooth flow, not congestion. And here's the encouraging part: your triglyceride/HDL ratio is excellent (1.86), which often means your LDL particles are larger and less harmful. Let's verify this with advanced testing and adjust your stack accordingly.
+          </p>
+        </div>
+
+        <div class="marker-visual">
+          <span class="marker-icon">💛</span>
+          <div class="marker-info">
+            <div class="marker-name">HDL Cholesterol (The "Good" One)</div>
+            <div class="marker-value">Your value: 51.14 mg/dL | Optimal: &gt;60 mg/dL</div>
+          </div>
+          <span class="marker-status attention">Can Be Better</span>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-label">
+            <span>Current Level</span>
+            <span>85% of optimal target</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar warning" style="--progress-width: 72%;"></div>
+          </div>
+        </div>
+
+        <div class="understanding-section" onclick="toggleUnderstanding(this)">
+          <div class="understanding-header">
+            <h4 class="understanding-title">
+              <span>🤔</span>
+              Why HDL Matters So Much
+            </h4>
+            <span class="understanding-toggle">↓</span>
+          </div>
+          <div class="understanding-content">
+            <p class="understanding-text">
+              Think of HDL as your body's cleanup crew. It travels through your bloodstream picking up excess cholesterol and bringing it back to your liver for disposal. Higher HDL means better cardiovascular protection. The beautiful thing? HDL responds really well to Omega-3s, especially EPA. By increasing your Omega-3 from 1g to 3-4g daily, we can push your HDL into that protective zone above 60 mg/dL. Some people also respond well to niacin (though discuss with your doctor first). Exercise also boosts HDL significantly—you're already active, so you're on the right track.
+            </p>
+          </div>
+        </div>
+
+        <div class="marker-visual">
+          <span class="marker-icon">🧬</span>
+          <div class="marker-info">
+            <div class="marker-name">SHBG (Sex Hormone Binding Globulin)</div>
+            <div class="marker-value">Your value: 66.9 nmol/L | Optimal: 18-53.4 nmol/L</div>
+          </div>
+          <span class="marker-status attention">Elevated</span>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-label">
+            <span>Current Level</span>
+            <span>125% of upper limit</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar warning" style="--progress-width: 78%;"></div>
+          </div>
+        </div>
+
+        <div class="empathy-box info" style="margin-top: 1.5rem;">
+          <h3 class="empathy-title">Here's what elevated SHBG means for you 💜</h3>
+          <p class="empathy-text">
+            SHBG is like a sponge that soaks up your free testosterone, making it unavailable for use. Your total testosterone is excellent (30.5 nmol/L), but elevated SHBG means less of it is "free" and active. This is actually a common pattern and very addressable. Boron (which you're taking at 3mg) is proven to lower SHBG—let's increase it to 6mg. Adding Stinging Nettle Root can also help. The goal isn't to change your total testosterone (it's great), but to free up more of what you already have. Think of it as unlocking testosterone that's currently sitting on the bench, waiting to get in the game.
+          </p>
+        </div>
+
+        <div class="marker-visual">
+          <span class="marker-icon">⚡</span>
+          <div class="marker-info">
+            <div class="marker-name">Zinc (Lower End of Range)</div>
+            <div class="marker-value">Your value: 79.5 μg/dL | Optimal: 72.6-127 μg/dL</div>
+          </div>
+          <span class="marker-status attention">Low-Normal</span>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-label">
+            <span>Current Level</span>
+            <span>Within range but could be higher</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar warning" style="--progress-width: 50%;"></div>
+          </div>
+        </div>
+
+        <div class="understanding-section" onclick="toggleUnderstanding(this)">
+          <div class="understanding-header">
+            <h4 class="understanding-title">
+              <span>🔬</span>
+              Why Zinc Deserves Your Attention
+            </h4>
+            <span class="understanding-toggle">↓</span>
+          </div>
+          <div class="understanding-content">
+            <p class="understanding-text">
+              Zinc is involved in over 300 enzymatic reactions in your body. It supports immune function, testosterone production, wound healing, protein synthesis, and even acts as a natural aromatase inhibitor (meaning it helps prevent testosterone from converting to estrogen). Your level isn't deficient, but it's at the lower end—there's opportunity here. Adding 15-30mg of Zinc Picolinate (the most bioavailable form) can boost this into the optimal range. Take it with food to avoid nausea, and separate it from high-dose calcium or iron if you ever supplement those.
+            </p>
+          </div>
+        </div>
+
+        <div class="marker-visual">
+          <span class="marker-icon">💪</span>
+          <div class="marker-info">
+            <div class="marker-name">Vitamin B12 (Above Range)</div>
+            <div class="marker-value">Your value: 843 pg/mL | Reference: 197-771 pg/mL</div>
+          </div>
+          <span class="marker-status attention">Elevated</span>
+        </div>
+
+        <div class="empathy-box warning" style="margin-top: 1.5rem;">
+          <h3 class="empathy-title">Good news: this is an easy fix 💛</h3>
+          <p class="empathy-text">
+            You're not actively supplementing B12, which means you're getting plenty from your diet (animal products, fortified foods). Elevated B12 usually isn't harmful, but it's also unnecessary—your body can't use the excess. If you're taking any multivitamin or B-complex, check the B12 content and consider switching to one without it. Your body is clearly efficient at absorbing and retaining B12, which is actually a good sign of healthy gut absorption. No action needed beyond avoiding additional supplementation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOTIVATION SECTION -->
+    <div class="motivation-section animate-in">
+      <blockquote class="motivation-quote">
+        "Your body is not a problem to solve. It's a masterpiece to optimize."
+      </blockquote>
+      <p class="motivation-author">— Your Health Journey</p>
+    </div>
+
+    <!-- SUPPLEMENT STACK OPTIMIZATION -->
+    <section class="glass-card animate-in">
+      <div class="section-header">
+        <span class="section-emoji">💊</span>
+        <div class="section-eyebrow">Your Current Stack</div>
+        <h2 class="section-title">Let's Optimize What You're Already Doing</h2>
+        <p class="section-description">
+          Your supplement stack is impressive—comprehensive, thoughtful, and clearly designed for longevity. But even the best stacks can be refined. Here's where small tweaks can create meaningful improvements.
+        </p>
+      </div>
+
+      <!-- Priority Matrix -->
+      <div class="priority-matrix">
+        <div class="priority-quadrant high-impact">
+          <div class="quadrant-header">
+            <span class="quadrant-icon">🔴</span>
+            <div>
+              <h3 class="quadrant-title">Act on These First</h3>
+              <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">High impact, easy to implement</p>
+            </div>
+          </div>
+          <ul class="quadrant-items">
+            <li><strong>Increase Omega-3</strong> from 1g to 3-4g daily (LDL/HDL optimization)</li>
+            <li><strong>Increase Bergamot</strong> from 500mg to 1000mg (cholesterol support)</li>
+            <li><strong>Add Zinc Picolinate</strong> 15-30mg (boost low-normal levels)</li>
+            <li><strong>Increase Boron</strong> from 3mg to 6mg (lower SHBG)</li>
+          </ul>
+        </div>
+
+        <div class="priority-quadrant medium-impact">
+          <div class="quadrant-header">
+            <span class="quadrant-icon">🟡</span>
+            <div>
+              <h3 class="quadrant-title">Adjust These Soon</h3>
+              <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">Important optimizations</p>
+            </div>
+          </div>
+          <ul class="quadrant-items">
+            <li><strong>Reduce Ashwagandha</strong> from 1500mg to 300-600mg (standard dose)</li>
+            <li><strong>Reduce GABA</strong> from 500mg to 100mg (typical dose is lower)</li>
+            <li><strong>Remove Magnesium Taurate</strong> (redundant with Threonate + Glycinate)</li>
+            <li><strong>Simplify Creatine</strong> to 5g once daily (currently 6.7g split)</li>
+          </ul>
+        </div>
+
+        <div class="priority-quadrant low-impact">
+          <div class="quadrant-header">
+            <span class="quadrant-icon">🔵</span>
+            <div>
+              <h3 class="quadrant-title">Consider Adding</h3>
+              <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">Nice-to-haves for further optimization</p>
+            </div>
+          </div>
+          <ul class="quadrant-items">
+            <li><strong>DIM 100-200mg</strong> (support estrogen metabolism)</li>
+            <li><strong>Stinging Nettle Root 300mg</strong> (help lower SHBG)</li>
+            <li><strong>Increase Boswellia</strong> from 200mg to 400mg (joint/inflammation)</li>
+          </ul>
+        </div>
+
+        <div class="priority-quadrant low-impact">
+          <div class="quadrant-header">
+            <span class="quadrant-icon">✅</span>
+            <div>
+              <h3 class="quadrant-title">Keep Doing Great</h3>
+              <p style="font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem;">These are working beautifully</p>
+            </div>
+          </div>
+          <ul class="quadrant-items">
+            <li><strong>NAC 600mg</strong> — Liver protection, glutathione</li>
+            <li><strong>CoQ10 200mg</strong> — Mitochondrial energy</li>
+            <li><strong>Spermidine 8mg</strong> — Autophagy, longevity</li>
+            <li><strong>Berberine 500mg</strong> — HbA1c is perfect (4.9%)</li>
+            <li><strong>Curcumin 500mg</strong> — Inflammation control (CRP &lt;5)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="empathy-box" style="margin-top: 3rem;">
+        <h3 class="empathy-title">Understanding the "Why" Behind These Changes 🧠</h3>
+        <p class="empathy-text">
+          These aren't arbitrary recommendations—they're based on your specific blood work and how your body is responding. The Omega-3 increase targets your cholesterol imbalance. The Ashwagandha reduction prevents potential thyroid issues from excessive doses (your TSH is currently perfect at 0.94, let's keep it that way). The magnesium simplification avoids redundancy and potential GI issues. Every change is designed to support what your body is telling us through your markers. You're not fixing what's broken—you're fine-tuning an already sophisticated system.
+        </p>
+      </div>
+    </section>
+
+    <!-- SUPPLEMENT TIMING -->
+    <section class="glass-card animate-in">
+      <div class="section-header">
+        <span class="section-emoji">⏰</span>
+        <div class="section-eyebrow">Timing Matters</div>
+        <h2 class="section-title">When to Take What (and Why It Matters)</h2>
+        <p class="section-description">
+          Taking the right supplement at the wrong time is like watering a plant in the dark—still beneficial, but not optimal. Here's how to maximize absorption and effectiveness.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-time">🌅 Morning<br/>(Empty Stomach)</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4 style="margin-bottom: 1rem; font-size: 1.125rem;">First Thing, Before Breakfast</h4>
+            <p style="margin-bottom: 0.75rem; color: #6b7280;">These work best when your stomach is empty:</p>
+            <ul style="margin-left: 1.5rem; color: #4b5563;">
+              <li><strong>Berberine 500mg</strong> — 30 minutes before eating for AMPK activation</li>
+              <li><strong>L-Tyrosine 500mg</strong> (gym days) — dopamine precursor, best on empty stomach</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #7a12d4; background: #f5f0fa; padding: 0.75rem; border-radius: 8px;">
+              💡 <strong>Why:</strong> Berberine competes with carbs for absorption. Taking it first maximizes its glucose-management effects when you eat breakfast.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">☀️ Morning<br/>(With Breakfast)</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4 style="margin-bottom: 1rem; font-size: 1.125rem;">With Your First Meal (Including Healthy Fats)</h4>
+            <p style="margin-bottom: 0.75rem; color: #6b7280;">Fat-soluble nutrients and better-with-food supplements:</p>
+            <ul style="margin-left: 1.5rem; color: #4b5563;">
+              <li><strong>Vitamin D3/K2</strong> — fat-soluble, needs dietary fat</li>
+              <li><strong>CoQ10 200mg (Ubiquinol)</strong> — much better absorption with fats</li>
+              <li><strong>Omega-3 2g</strong> (half your daily dose) — reduce fishy burps</li>
+              <li><strong>Curcumin 500mg</strong> — fat-soluble, needs fat or black pepper</li>
+              <li><strong>Lutein/Zeaxanthin</strong> — fat-soluble carotenoids</li>
+              <li><strong>L-Ergothioneine 5mg</strong> — can take anytime</li>
+              <li><strong>Boswellia 400mg</strong> — better with food</li>
+              <li><strong>DIM 100-200mg</strong> (new addition) — take with fat</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #7a12d4; background: #f5f0fa; padding: 0.75rem; border-radius: 8px;">
+              💡 <strong>Pro tip:</strong> Add a handful of nuts, avocado, or olive oil to your breakfast to enhance absorption of all these fat-soluble nutrients by up to 300%.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">🕐 Midday<br/>(With Lunch)</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4 style="margin-bottom: 1rem; font-size: 1.125rem;">Around Lunchtime</h4>
+            <ul style="margin-left: 1.5rem; color: #4b5563;">
+              <li><strong>NAC 600mg</strong> — supports glutathione throughout the day</li>
+              <li><strong>Acetyl-L-Carnitine 1500mg</strong> — energy & cognition boost</li>
+              <li><strong>TMG 500-1000mg</strong> — methylation support</li>
+              <li><strong>Bergamot 1000mg</strong> (increased dose) — cholesterol management</li>
+              <li><strong>Spermidine 8mg</strong> — autophagy support</li>
+              <li><strong>PQQ 10-20mg</strong> — mitochondrial biogenesis</li>
+              <li><strong>Creatine 5g</strong> — timing doesn't matter much, consistency does</li>
+              <li><strong>Boron 6mg</strong> (increased) — SHBG management</li>
+              <li><strong>Zinc Picolinate 15-30mg</strong> (new addition) — take with food</li>
+              <li><strong>Stinging Nettle Root 300mg</strong> (new addition) — SHBG support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">🌆 Evening<br/>(With Dinner)</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4 style="margin-bottom: 1rem; font-size: 1.125rem;">With Your Evening Meal</h4>
+            <ul style="margin-left: 1.5rem; color: #4b5563;">
+              <li><strong>Omega-3 2g</strong> (remaining half) — split dose reduces reflux</li>
+              <li><strong>MSM 1-3g</strong> — joint support</li>
+              <li><strong>Collagen Type II 40mg</strong> — immune modulation for joints</li>
+              <li><strong>Collagen Type I/III 10-15g</strong> — can take anytime</li>
+              <li><strong>Green Tea Extract 500mg</strong> (gym days) — contains some caffeine, so not too late</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-time">🌙 Bedtime<br/>(30-60 min before sleep)</div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h4 style="margin-bottom: 1rem; font-size: 1.125rem;">Your Sleep & Recovery Stack</h4>
+            <ul style="margin-left: 1.5rem; color: #4b5563;">
+              <li><strong>Magnesium Threonate 2000mg</strong> — brain-specific magnesium</li>
+              <li><strong>Magnesium Glycinate 400mg</strong> — relaxation & sleep</li>
+              <li><strong>Glycine 3g</strong> — precursor to glutathione, improves sleep quality</li>
+              <li><strong>Ashwagandha 300-600mg</strong> (reduced from 1500mg) — stress & cortisol</li>
+              <li><strong>L-Theanine 100-200mg</strong> (as needed) — relaxation without sedation</li>
+              <li><strong>GABA 100mg</strong> (reduced from 500mg, as needed) — calming neurotransmitter</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #7a12d4; background: #f5f0fa; padding: 0.75rem; border-radius: 8px;">
+              💡 <strong>Sleep Science:</strong> This stack works synergistically. Magnesium relaxes muscles and nervous system. Glycine lowers core body temperature (essential for sleep onset). Ashwagandha reduces cortisol. Together, they create the perfect biochemical environment for deep, restorative sleep.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="empathy-box info" style="margin-top: 3rem;">
+        <h3 class="empathy-title">Don't Stress About Perfect Timing 💜</h3>
+        <p class="empathy-text">
+          Yes, timing matters—but consistency matters more. If taking everything at once means you'll actually take it consistently, that's better than trying to split doses perfectly and forgetting half. Use this timeline as a guide, not a rigid rule. Your body is incredibly adaptable. The most important thing is that you're taking quality supplements regularly. The timing optimizations are just the cherry on top of an already excellent foundation.
+        </p>
+      </div>
+    </section>
+
+    <!-- SYNERGIES & UNDERSTANDING -->
+    <section class="glass-card animate-in">
+      <div class="section-header">
+        <span class="section-emoji">🤝</span>
+        <div class="section-eyebrow">How Your Stack Works Together</div>
+        <h2 class="section-title">The Beautiful Science of Synergy</h2>
+        <p class="section-description">
+          Your supplements aren't working in isolation—they're dancing together in complex biochemical pathways. Here's how they support each other.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 2rem 0;">
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 20px; padding: 2rem; border: 2px solid #86efac;">
+          <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #166534;">
+            <span style="font-size: 2rem;">💚</span>
+            <span>Glutathione Production</span>
+          </h3>
+          <p style="color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+            <strong>NAC + Glycine</strong> are the two rate-limiting precursors for glutathione, your body's master antioxidant. Together, they work synergistically—better than either alone.
+          </p>
+          <p style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 12px; color: #374151;">
+            <strong>Evidence of Success:</strong> Your liver enzymes (ALT 19, AST 17) are pristine, showing this combo is protecting your liver beautifully.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-radius: 20px; padding: 2rem; border: 2px solid #fcd34d;">
+          <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #92400e;">
+            <span style="font-size: 2rem;">⚡</span>
+            <span>Mitochondrial Powerhouse</span>
+          </h3>
+          <p style="color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+            <strong>CoQ10 + PQQ + Acetyl-L-Carnitine</strong> form the ultimate energy trinity. CoQ10 powers the electron transport chain, PQQ creates new mitochondria, and ALCAR shuttles fatty acids for fuel.
+          </p>
+          <p style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 12px; color: #374151;">
+            <strong>What This Means:</strong> More energy production at the cellular level. Literally giving your cells the tools to generate more ATP (the energy currency).
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); border-radius: 20px; padding: 2rem; border: 2px solid #fca5a5;">
+          <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #991b1b;">
+            <span style="font-size: 2rem;">❤️</span>
+            <span>Cardiovascular Support</span>
+          </h3>
+          <p style="color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+            <strong>Bergamot + Berberine + Omega-3</strong> attack cholesterol through different mechanisms. Bergamot inhibits cholesterol synthesis, Berberine upregulates LDL receptors, and Omega-3 lowers triglycerides and raises HDL.
+          </p>
+          <p style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 12px; color: #374151;">
+            <strong>The Plan:</strong> By increasing Bergamot and Omega-3, we're amplifying this synergy to tackle your elevated LDL from multiple angles simultaneously.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); border-radius: 20px; padding: 2rem; border: 2px solid #a5b4fc;">
+          <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #1e40af;">
+            <span style="font-size: 2rem;">🔥</span>
+            <span>Anti-Inflammatory Alliance</span>
+          </h3>
+          <p style="color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+            <strong>Curcumin + Boswellia + Omega-3</strong> work through different inflammation pathways. Curcumin blocks NF-κB, Boswellia inhibits 5-LOX, and Omega-3 provides anti-inflammatory EPA/DHA.
+          </p>
+          <p style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 12px; color: #374151;">
+            <strong>Proof It's Working:</strong> Your CRP is &lt;5 (excellent). This trifecta is keeping systemic inflammation beautifully controlled.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%); border-radius: 20px; padding: 2rem; border: 2px solid #c4b5fd;">
+          <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #7a12d4;">
+            <span style="font-size: 2rem;">🦴</span>
+            <span>Joint Recovery Team</span>
+          </h3>
+          <p style="color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+            <strong>Collagen II + Collagen I/III + MSM + Boswellia + Curcumin</strong> — a comprehensive joint support system. Type II collagen modulates immune response, Type I/III rebuild connective tissue, MSM provides sulfur, and anti-inflammatories reduce pain.
+          </p>
+          <p style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 12px; color: #374151;">
+            <strong>For Your Foot Injury:</strong> This stack addresses both structural repair and inflammation reduction—exactly what injured tissue needs.
+          </p>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); border-radius: 20px; padding: 2rem; border: 2px solid #93c5fd;">
+          <h3 style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; color: #1e40af;">
+            <span style="font-size: 2rem;">🧬</span>
+            <span>Hormone Optimization</span>
+          </h3>
+          <p style="color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+            <strong>Boron + Zinc + Ashwagandha + Stinging Nettle</strong> work together to optimize your testosterone. Boron lowers SHBG, Zinc supports T production and blocks aromatase, Ashwagandha reduces cortisol (cortisol competes with testosterone), and Nettle blocks SHBG binding.
+          </p>
+          <p style="font-size: 0.9rem; background: white; padding: 1rem; border-radius: 12px; color: #374151;">
+            <strong>The Strategy:</strong> Your total T is great (30.5). This combo frees up more of it by lowering SHBG (currently 66.9, elevated).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CHECKLIST -->
+    <div class="checklist-container animate-in">
+      <div class="checklist-header">
+        <h2 class="checklist-title">🎯 Your Action Plan Checklist</h2>
+        <p class="checklist-subtitle">
+          Track your progress as you implement these changes. Small steps lead to big transformations.
+        </p>
+      </div>
+
+      <div id="checklist">
+        <!-- Priority 1: Immediate Actions -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #0f131a;">🔴 Priority 1: Start This Week</h3>
+
+          <div class="checklist-item" data-id="omega3">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Increase Omega-3</strong> from 1g to 3-4g daily (split into 2g morning, 2g evening)
+            </div>
+            <span class="checklist-priority high">High</span>
+          </div>
+
+          <div class="checklist-item" data-id="bergamot">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Increase Bergamot</strong> from 500mg to 1000mg daily (take with fatty meal)
+            </div>
+            <span class="checklist-priority high">High</span>
+          </div>
+
+          <div class="checklist-item" data-id="zinc">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Add Zinc Picolinate</strong> 15-30mg with lunch (to boost your low-normal levels)
+            </div>
+            <span class="checklist-priority high">High</span>
+          </div>
+
+          <div class="checklist-item" data-id="boron">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Increase Boron</strong> from 3mg to 6mg daily (to help lower SHBG)
+            </div>
+            <span class="checklist-priority high">High</span>
+          </div>
+        </div>
+
+        <!-- Priority 2: Adjust Current Stack -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #0f131a;">🟡 Priority 2: Adjust Within 2 Weeks</h3>
+
+          <div class="checklist-item" data-id="ashwagandha">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Reduce Ashwagandha</strong> from 1500mg to 300-600mg (standard KSM-66 dose)
+            </div>
+            <span class="checklist-priority medium">Medium</span>
+          </div>
+
+          <div class="checklist-item" data-id="gaba">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Reduce GABA</strong> from 500mg to 100mg (typical effective dose)
+            </div>
+            <span class="checklist-priority medium">Medium</span>
+          </div>
+
+          <div class="checklist-item" data-id="magnesium">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Remove Magnesium Taurate</strong> (keep Threonate AM + Glycinate PM only)
+            </div>
+            <span class="checklist-priority medium">Medium</span>
+          </div>
+
+          <div class="checklist-item" data-id="creatine">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Simplify Creatine</strong> to 5g once daily (currently taking 6.7g split dose)
+            </div>
+            <span class="checklist-priority medium">Medium</span>
+          </div>
+        </div>
+
+        <!-- Priority 3: Consider Adding -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #0f131a;">🔵 Priority 3: Consider Adding This Month</h3>
+
+          <div class="checklist-item" data-id="dim">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Add DIM</strong> 100-200mg with breakfast (supports healthy estrogen metabolism)
+            </div>
+            <span class="checklist-priority low">Low</span>
+          </div>
+
+          <div class="checklist-item" data-id="nettle">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Add Stinging Nettle Root</strong> 300mg with lunch (helps lower SHBG)
+            </div>
+            <span class="checklist-priority low">Low</span>
+          </div>
+
+          <div class="checklist-item" data-id="boswellia">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Increase Boswellia</strong> from 200mg to 400mg (enhanced joint/inflammation support)
+            </div>
+            <span class="checklist-priority low">Low</span>
+          </div>
+        </div>
+
+        <!-- Follow-Up Actions -->
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: #0f131a;">📋 Follow-Up & Monitoring</h3>
+
+          <div class="checklist-item" data-id="bloodwork">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Schedule 3-month blood work</strong> (lipid panel with ApoB, hormones, zinc)
+            </div>
+            <span class="checklist-priority medium">Medium</span>
+          </div>
+
+          <div class="checklist-item" data-id="nmr">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Consider NMR LipoProfile</strong> (advanced particle size analysis for LDL)
+            </div>
+            <span class="checklist-priority low">Low</span>
+          </div>
+
+          <div class="checklist-item" data-id="track">
+            <div class="checklist-checkbox"></div>
+            <div class="checklist-text">
+              <strong>Track subjective changes</strong> (energy, sleep quality, recovery, mood)
+            </div>
+            <span class="checklist-priority medium">Medium</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem; padding: 2rem; background: white; border-radius: 16px;">
+        <p style="font-size: 1.125rem; color: #4b5563; line-height: 1.7; margin-bottom: 1rem;">
+          <strong>Your progress is saved automatically.</strong> Come back anytime to update your checklist.
+        </p>
+        <p style="font-size: 0.95rem; color: #6b7280;">
+          Remember: Consistency beats perfection. Even implementing half of these changes will create meaningful improvements. 💚
+        </p>
+      </div>
+    </div>
+
+    <!-- FINAL MOTIVATION -->
+    <section class="glass-card animate-in">
+      <div style="text-align: center; padding: 2rem 0;">
+        <span style="font-size: 4rem; display: block; margin-bottom: 1.5rem;">🌱</span>
+        <h2 style="font-size: 2rem; font-weight: 800; color: #0f131a; margin-bottom: 1.5rem;">
+          You're Not Starting From Zero
+        </h2>
+        <p style="font-size: 1.25rem; color: #4b5563; line-height: 1.8; max-width: 700px; margin: 0 auto 2rem;">
+          Your blood work shows that you've already built an incredible foundation. Your metabolic health is excellent. Your inflammation is low. Your hormones are strong. These recommendations aren't about fixing problems—they're about taking an already impressive system and making it even better.
+        </p>
+        <p style="font-size: 1.125rem; color: #6b7280; line-height: 1.7; max-width: 650px; margin: 0 auto;">
+          Health optimization is a journey, not a destination. Every small adjustment compounds over time. Trust your body. Listen to its signals. And remember: the goal isn't perfection—it's continuous improvement and feeling vibrantly alive.
+        </p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%); border-radius: 20px; padding: 2.5rem; margin-top: 3rem; text-align: center;">
+        <h3 style="font-size: 1.5rem; font-weight: 700; color: #7a12d4; margin-bottom: 1.5rem;">
+          📧 Questions? Concerns? Feedback?
+        </h3>
+        <p style="font-size: 1.05rem; color: #4b5563; line-height: 1.7; margin-bottom: 1.5rem;">
+          This analysis is meant to empower you, not overwhelm you. If anything is unclear, or if you want to discuss specific changes before implementing them, reach out. Your health journey is personal, and these recommendations should feel right for you.
+        </p>
+        <p style="font-size: 0.95rem; color: #6b7280; font-style: italic;">
+          Remember: You know your body better than any blood test. Use this information as a guide, but trust your intuition too. 💜
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="mv-container">
+      <p><strong>⚠️ Important Disclaimer:</strong></p>
+      <p style="max-width: 800px; margin: 1rem auto 2rem;">
+        This analysis is for informational and educational purposes only and does not constitute medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider before making any changes to your supplement regimen, especially if you have existing health conditions or take prescription medications. Individual results may vary.
+      </p>
+      <p style="opacity: 0.7;">Analysis Generated: December 2025 | Based on Blood Work: October 30, 2025</p>
+      <p style="margin-top: 1.5rem; opacity: 0.5;">&copy; Mindvalley • Supplement Stack Analysis • Created with care 💜</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Interactive Elements -->
+  <script>
+    // Understanding Section Toggle
+    function toggleUnderstanding(element) {
+      const content = element.querySelector('.understanding-content');
+      const toggle = element.querySelector('.understanding-toggle');
+
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        toggle.classList.remove('open');
+      } else {
+        content.classList.add('open');
+        toggle.classList.add('open');
+      }
+    }
+
+    // Interactive Checklist with LocalStorage
+    document.addEventListener('DOMContentLoaded', function() {
+      const checklistItems = document.querySelectorAll('.checklist-item');
+
+      // Load saved state from localStorage
+      checklistItems.forEach(item => {
+        const id = item.getAttribute('data-id');
+        const isChecked = localStorage.getItem(`checklist_${id}`) === 'true';
+
+        if (isChecked) {
+          item.classList.add('checked');
+        }
+
+        // Add click handler
+        item.addEventListener('click', function() {
+          this.classList.toggle('checked');
+          const newState = this.classList.contains('checked');
+          localStorage.setItem(`checklist_${id}`, newState);
+
+          // Add subtle animation
+          this.style.transform = 'scale(0.98)';
+          setTimeout(() => {
+            this.style.transform = 'scale(1)';
+          }, 100);
+        });
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scroll for any anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add hover effect to category cards
+    document.querySelectorAll('.category-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+      });
+    });
+  </script>
+
+</body>
+</html>

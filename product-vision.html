@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vibrantly — Product Vision | Mindvalley</title>
+  <meta name="description" content="Vibrantly: Your AI-Powered Health Optimization Companion. Product vision document for the Mindvalley team." />
+  <meta name="theme-color" content="#7a12d4" />
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 50%, #7a12d4 100%);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+      font-size: 4.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    .hero-meta {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Navigation */
+    .nav-sticky {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      z-index: 100;
+      padding: 1rem 2rem;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-link {
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #7a12d4;
+      border-bottom-color: #7a12d4;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Section */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      color: #7a12d4;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.25rem;
+      color: #4b5563;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(122, 18, 212, 0.15);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-text {
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2.5rem; }
+      .section-title { font-size: 2rem; }
+    }
+
+    /* Problem Stats */
+    .stat-box {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .quote-text {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #0f131a;
+      line-height: 1.4;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .quote-text::before {
+      content: '"';
+      color: #7a12d4;
+    }
+
+    .quote-text::after {
+      content: '"';
+      color: #7a12d4;
+    }
+
+    /* Flow Diagram */
+    .flow-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+    }
+
+    .flow-step {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      min-width: 140px;
+    }
+
+    .flow-step-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .flow-step-text {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #0f131a;
+    }
+
+    .flow-arrow {
+      font-size: 1.5rem;
+      color: #7a12d4;
+    }
+
+    /* Journey Steps */
+    .journey-step {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: flex-start;
+    }
+
+    .journey-number {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .journey-content {
+      flex: 1;
+    }
+
+    .journey-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+    }
+
+    .journey-text {
+      color: #4b5563;
+      margin-bottom: 1rem;
+    }
+
+    .journey-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .journey-tag {
+      background: #f5f0fa;
+      color: #7a12d4;
+      padding: 0.4rem 0.85rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Comparison Example */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .comparison { grid-template-columns: 1fr; }
+    }
+
+    .comparison-bad {
+      background: #fef2f2;
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid #ef4444;
+    }
+
+    .comparison-good {
+      background: #f0fdf4;
+      border-radius: 20px;
+      padding: 2rem;
+      border-left: 4px solid #22c55e;
+    }
+
+    .comparison-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .comparison-bad .comparison-label { color: #ef4444; }
+    .comparison-good .comparison-label { color: #22c55e; }
+
+    .comparison-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+    }
+
+    .comparison-text {
+      color: #4b5563;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Dashboard Preview */
+    .dashboard-preview {
+      background: #0f131a;
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .dashboard-header {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dashboard-dot.red { background: #ef4444; }
+    .dashboard-dot.yellow { background: #f59e0b; }
+    .dashboard-dot.green { background: #22c55e; }
+
+    .dashboard-content {
+      background: linear-gradient(180deg, #fafbff 0%, #ffffff 100%);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .dashboard-score {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-radius: 16px;
+      margin-bottom: 1.5rem;
+    }
+
+    .dashboard-score-number {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #7a12d4;
+      line-height: 1;
+    }
+
+    .dashboard-score-label {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .dashboard-progress {
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .dashboard-progress-bar {
+      height: 8px;
+      background: #e5e7eb;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .dashboard-progress-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, #7a12d4, #9333ea);
+    }
+
+    /* Feature Grid */
+    .feature-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: #7a12d4;
+      transform: translateY(-4px);
+    }
+
+    .feature-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-text {
+      color: #4b5563;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-list {
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: #4b5563;
+      font-size: 0.9rem;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #7a12d4;
+      font-weight: 700;
+    }
+
+    /* Comparison Table */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .comp-table th,
+    .comp-table td {
+      padding: 1rem 1.25rem;
+      text-align: center;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .comp-table th {
+      background: #fafbff;
+      font-weight: 700;
+      color: #0f131a;
+      font-size: 0.9rem;
+    }
+
+    .comp-table th:first-child {
+      text-align: left;
+    }
+
+    .comp-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #0f131a;
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table .highlight {
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+    }
+
+    .comp-table .highlight th {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+    }
+
+    /* Business Model */
+    .pricing-card {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card.featured {
+      border: 3px solid #7a12d4;
+    }
+
+    .pricing-card.featured::before {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: 1rem;
+      right: -2rem;
+      background: #7a12d4;
+      color: white;
+      padding: 0.35rem 2.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      transform: rotate(45deg);
+    }
+
+    .pricing-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #7a12d4;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-period {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: #22c55e;
+      font-weight: 700;
+    }
+
+    /* Mindvalley Section */
+    .mv-section {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+      padding: 5rem 0;
+    }
+
+    .mv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .mv-grid { grid-template-columns: 1fr; }
+    }
+
+    .mv-card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .mv-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .mv-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .mv-card-text {
+      opacity: 0.9;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Roadmap */
+    .roadmap {
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    .roadmap::before {
+      content: '';
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #7a12d4, #9333ea);
+      border-radius: 2px;
+    }
+
+    .roadmap-item {
+      position: relative;
+      padding-bottom: 3rem;
+    }
+
+    .roadmap-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.25rem;
+      width: 18px;
+      height: 18px;
+      background: #7a12d4;
+      border-radius: 50%;
+      border: 4px solid white;
+      box-shadow: 0 2px 8px rgba(122, 18, 212, 0.3);
+    }
+
+    .roadmap-phase {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #7a12d4;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .roadmap-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .roadmap-list li {
+      background: #f5f0fa;
+      color: #7a12d4;
+      padding: 0.4rem 0.85rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Transformation Box */
+    .transform-box {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      margin: 2rem 0;
+    }
+
+    .transform-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      align-items: flex-start;
+    }
+
+    .transform-item:last-child {
+      border-bottom: none;
+    }
+
+    .transform-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .transform-content h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.35rem;
+    }
+
+    .transform-content p {
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #0f131a 0%, #1f2937 100%);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .cta-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .cta-text {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn-primary {
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      color: white;
+    }
+
+    .cta-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(122, 18, 212, 0.4);
+    }
+
+    .cta-btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .cta-btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">Product Vision Document</span>
+      <h1 class="hero-title">Vibrantly</h1>
+      <p class="hero-subtitle">Your AI-Powered Health Optimization Companion</p>
+      <p class="hero-meta">Version 1.0 • December 2025 • Mindvalley</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-sticky">
+    <div class="nav-inner">
+      <a href="#problem" class="nav-link">Problem</a>
+      <a href="#vision" class="nav-link">Vision</a>
+      <a href="#journey" class="nav-link">User Journey</a>
+      <a href="#biomarkers" class="nav-link">Biomarkers</a>
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#competitive" class="nav-link">Competitive</a>
+      <a href="#business" class="nav-link">Business Model</a>
+      <a href="#mindvalley" class="nav-link">MV Advantage</a>
+      <a href="#roadmap" class="nav-link">Roadmap</a>
+    </div>
+  </nav>
+
+  <!-- Problem Section -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Opportunity</span>
+        <h2 class="section-title">People Are Lost in Their Health Data</h2>
+        <p class="section-description">Blood work is confusing. Supplements are a guessing game. There's no system connecting it all.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="stat-box">
+          <div class="stat-number">77%</div>
+          <div class="stat-label">of Americans take supplements</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">89%</div>
+          <div class="stat-label">don't know if they're working</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">$50B</div>
+          <div class="stat-label">spent annually with zero personalization</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">&lt;5%</div>
+          <div class="stat-label">get personalized recommendations</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 3rem;">
+        <div class="card">
+          <span class="card-icon">😰</span>
+          <h3 class="card-title">The Pain Points</h3>
+          <ul class="feature-list">
+            <li>Blood work reports are confusing and scary</li>
+            <li>No idea if supplements are actually helping</li>
+            <li>Information overload from conflicting advice</li>
+            <li>Health optimization feels like it requires a PhD</li>
+            <li>$10K/year concierge doctors are out of reach</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔓</span>
+          <h3 class="card-title">The Gap We Fill</h3>
+          <p class="card-text">There's no intelligent system that connects <strong>blood markers → supplements → food → outcomes</strong> in a personalized, continuous way.</p>
+          <p class="card-text" style="margin-top: 1rem;">Until now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section id="vision" class="section" style="background: #fafbff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Vision</span>
+        <h2 class="section-title">Health Optimization for Everyone</h2>
+      </div>
+
+      <div class="quote-box">
+        <p class="quote-text">Vibrantly turns your blood work, supplements, and diet into a personalized health optimization system—powered by AI, explained like a friend.</p>
+      </div>
+
+      <h3 style="text-align: center; font-size: 1.5rem; font-weight: 700; margin: 3rem 0 2rem;">The Core Loop</h3>
+
+      <div class="flow-container">
+        <div class="flow-step">
+          <span class="flow-step-icon">🩸</span>
+          <span class="flow-step-text">Upload Blood Work</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">🤖</span>
+          <span class="flow-step-text">AI Analyzes</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">💊</span>
+          <span class="flow-step-text">Optimize Stack</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">🍽️</span>
+          <span class="flow-step-text">Meal Plan</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">📈</span>
+          <span class="flow-step-text">Track Progress</span>
+        </div>
+      </div>
+
+      <p style="text-align: center; color: #6b7280; margin-top: 2rem; font-size: 1.1rem;">This continuous optimization loop is how real transformation happens.</p>
+    </div>
+  </section>
+
+  <!-- User Journey Section -->
+  <section id="journey" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">User Experience</span>
+        <h2 class="section-title">The User Journey</h2>
+        <p class="section-description">From confused to confident in under 10 minutes.</p>
+      </div>
+
+      <div class="journey-step">
+        <div class="journey-number">1</div>
+        <div class="journey-content">
+          <h3 class="journey-title">👤 About You</h3>
+          <p class="journey-text">Basic profile and health goals selection. What matters most to you?</p>
+          <div class="journey-list">
+            <span class="journey-tag">⚡ Energy</span>
+            <span class="journey-tag">🧬 Longevity</span>
+            <span class="journey-tag">🧠 Cognition</span>
+            <span class="journey-tag">💪 Performance</span>
+            <span class="journey-tag">😴 Sleep</span>
+            <span class="journey-tag">❤️ Heart Health</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="journey-number">2</div>
+        <div class="journey-content">
+          <h3 class="journey-title">🩸 Upload Blood Work</h3>
+          <p class="journey-text">PDF upload, photo scan, or manual entry. AI extracts 50+ biomarkers from any lab format instantly.</p>
+          <div class="journey-list">
+            <span class="journey-tag">📄 PDF Upload</span>
+            <span class="journey-tag">📸 Photo Scan</span>
+            <span class="journey-tag">⌨️ Manual Entry</span>
+            <span class="journey-tag">🔗 Lab Integration</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="journey-number">3</div>
+        <div class="journey-content">
+          <h3 class="journey-title">💊 Add Supplements</h3>
+          <p class="journey-text">Photo your bottles, scan barcodes, or search our 50K+ product database.</p>
+          <div class="journey-list">
+            <span class="journey-tag">📸 Photo Recognition</span>
+            <span class="journey-tag">📱 Barcode Scan</span>
+            <span class="journey-tag">🔍 Search Database</span>
+            <span class="journey-tag">🛒 Amazon Import</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-step">
+        <div class="journey-number">4</div>
+        <div class="journey-content">
+          <h3 class="journey-title">🍽️ Dietary Profile</h3>
+          <p class="journey-text">Quick assessment of eating style and preferences. No calorie counting—strategic eating only.</p>
+          <div class="journey-list">
+            <span class="journey-tag">Eating Style</span>
+            <span class="journey-tag">Restrictions</span>
+            <span class="journey-tag">Meal Timing</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="text-align: center; font-size: 1.75rem; font-weight: 700; margin: 4rem 0 2rem;">The "Empathy" Difference</h3>
+
+      <div class="comparison">
+        <div class="comparison-bad">
+          <div class="comparison-label">❌ Traditional Lab Report</div>
+          <h4 class="comparison-title">LDL Cholesterol: 171 mg/dL</h4>
+          <p class="comparison-text">Reference Range: &lt;100 mg/dL<br>Status: HIGH ⚠️</p>
+          <p class="comparison-text" style="margin-top: 1rem; font-style: italic;">User feels: Anxious, confused, doesn't know what to do</p>
+        </div>
+        <div class="comparison-good">
+          <div class="comparison-label">✅ Vibrantly Analysis</div>
+          <h4 class="comparison-title">Let's look deeper at your LDL</h4>
+          <p class="comparison-text">Your LDL is 171 mg/dL—technically "borderline high" but your TG/HDL ratio of 1.86 is excellent. This suggests your LDL particles are likely large and fluffy (less harmful).</p>
+          <p class="comparison-text" style="margin-top: 1rem;"><strong>What to do:</strong> Increase Omega-3 from 1g to 3g and Bergamot from 500mg to 1000mg.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personalized Biomarker Framework Section -->
+  <section id="biomarkers" class="section" style="background: #fafbff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Smart Personalization</span>
+        <h2 class="section-title">The Biomarker Framework</h2>
+        <p class="section-description">Not everyone needs 100+ markers. We focus on what matters most for YOUR age and gender.</p>
+      </div>
+
+      <div class="quote-box">
+        <p class="quote-text">Rather than confuse people with endless data, we measure only the core essential markers that actually predict health outcomes—personalized to each individual.</p>
+      </div>
+
+      <!-- How It Works -->
+      <h3 style="text-align: center; font-size: 1.75rem; font-weight: 700; margin: 3rem 0 2rem;">How Personalization Works</h3>
+
+      <div class="flow-container">
+        <div class="flow-step">
+          <span class="flow-step-icon">👤</span>
+          <span class="flow-step-text">Enter Age & Gender</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">🎯</span>
+          <span class="flow-step-text">Select Goals</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">🧬</span>
+          <span class="flow-step-text">Custom Panel Created</span>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <span class="flow-step-icon">📊</span>
+          <span class="flow-step-text">Track What Matters</span>
+        </div>
+      </div>
+
+      <!-- Age-Based Panels -->
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 4rem 0 2rem; text-align: center;">Age-Specific Marker Panels</h3>
+
+      <div class="grid-3">
+        <div class="feature-card" style="border-top: 4px solid #22c55e;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="width: 48px; height: 48px; background: #f0fdf4; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">30</div>
+            <div>
+              <h3 style="font-weight: 700; font-size: 1.125rem; margin: 0;">Ages 30-45</h3>
+              <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Peak Performance Phase</p>
+            </div>
+          </div>
+          <p class="feature-text">Focus on metabolic health, stress resilience, and building strong foundations.</p>
+          <ul class="feature-list">
+            <li>HOMA-IR (insulin resistance)</li>
+            <li>Heart Rate Variability (HRV)</li>
+            <li>Burnout Inventory</li>
+            <li>Ferritin (women)</li>
+            <li>VO₂ max estimation</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" style="border-top: 4px solid #f59e0b;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="width: 48px; height: 48px; background: #fffbeb; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">45</div>
+            <div>
+              <h3 style="font-weight: 700; font-size: 1.125rem; margin: 0;">Ages 45-60</h3>
+              <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Optimization Phase</p>
+            </div>
+          </div>
+          <p class="feature-text">Hormonal transition, cardiovascular focus, and longevity biomarkers become critical.</p>
+          <ul class="feature-list">
+            <li>Estradiol (women)</li>
+            <li>Hot-Flash Scale (women)</li>
+            <li>Burnout Inventory</li>
+            <li>Ferritin (women)</li>
+            <li>Advanced lipid markers</li>
+          </ul>
+        </div>
+
+        <div class="feature-card" style="border-top: 4px solid #7a12d4;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+            <div style="width: 48px; height: 48px; background: #f5f0fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">60</div>
+            <div>
+              <h3 style="font-weight: 700; font-size: 1.125rem; margin: 0;">Ages 60+</h3>
+              <p style="color: #6b7280; font-size: 0.85rem; margin: 0;">Longevity Phase</p>
+            </div>
+          </div>
+          <p class="feature-text">Cognitive preservation, inflammation control, and functional markers take priority.</p>
+          <ul class="feature-list">
+            <li>MoCA (cognitive assessment)</li>
+            <li>hs-CRP (inflammation)</li>
+            <li>Gait speed</li>
+            <li>Grip strength</li>
+            <li>Balance assessment</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Gender-Specific Panels -->
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 4rem 0 2rem; text-align: center;">Gender-Specific Markers</h3>
+
+      <div class="grid-2">
+        <div class="card" style="border-left: 4px solid #3b82f6;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <span style="font-size: 2.5rem;">♂️</span>
+            <div>
+              <h3 style="font-weight: 700; font-size: 1.25rem; margin: 0;">Men's Panel</h3>
+              <p style="color: #6b7280; font-size: 0.9rem; margin: 0;">Optimized for male physiology</p>
+            </div>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Testosterone</strong> — Primary hormone marker (all ages)</li>
+            <li><strong>SHBG</strong> — Free testosterone calculation</li>
+            <li><strong>PSA</strong> — Prostate screening (45+)</li>
+            <li><strong>ApoB</strong> — Cardiovascular risk (higher baseline)</li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding: 1rem; background: #f0f9ff; border-radius: 12px;">
+            <p style="font-size: 0.9rem; color: #1e40af; margin: 0;"><strong>Why it matters:</strong> Men have 2-3x higher cardiovascular risk. Testosterone optimization affects energy, cognition, and body composition.</p>
+          </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #ec4899;">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+            <span style="font-size: 2.5rem;">♀️</span>
+            <div>
+              <h3 style="font-weight: 700; font-size: 1.25rem; margin: 0;">Women's Panel</h3>
+              <p style="color: #6b7280; font-size: 0.9rem; margin: 0;">Optimized for female physiology</p>
+            </div>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Estradiol</strong> — Primary hormone marker (45-60 priority)</li>
+            <li><strong>Progesterone</strong> — Hormone balance indicator</li>
+            <li><strong>Ferritin</strong> — Iron status (critical 30-60)</li>
+            <li><strong>Hot-Flash Scale</strong> — Menopause symptom tracking</li>
+          </ul>
+          <div style="margin-top: 1.5rem; padding: 1rem; background: #fdf2f8; border-radius: 12px;">
+            <p style="font-size: 0.9rem; color: #9d174d; margin: 0;"><strong>Why it matters:</strong> Women's iron needs differ drastically. Perimenopause (45-55) is critical for intervention timing.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Universal Core Markers -->
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 4rem 0 2rem; text-align: center;">Universal Core Markers</h3>
+      <p style="text-align: center; color: #6b7280; max-width: 600px; margin: 0 auto 2rem;">These markers matter for everyone, regardless of age or gender.</p>
+
+      <div class="grid-4">
+        <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7a12d4, #9333ea); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700;">1</div>
+          <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">ApoB</h4>
+          <p style="font-size: 0.8rem; color: #6b7280;">Cardiovascular risk — the most predictive lipid marker</p>
+        </div>
+        <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7a12d4, #9333ea); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700;">2</div>
+          <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">HbA1c</h4>
+          <p style="font-size: 0.8rem; color: #6b7280;">Blood sugar control — 3-month average glucose</p>
+        </div>
+        <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7a12d4, #9333ea); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700;">3</div>
+          <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">Omega-3 Index</h4>
+          <p style="font-size: 0.8rem; color: #6b7280;">Inflammation & heart — directly modifiable</p>
+        </div>
+        <div style="background: white; border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7a12d4, #9333ea); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: 700;">4</div>
+          <h4 style="font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem;">VO₂ Max</h4>
+          <p style="font-size: 0.8rem; color: #6b7280;">Cardiorespiratory fitness — #1 longevity predictor</p>
+        </div>
+      </div>
+
+      <!-- Marker Categories -->
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 4rem 0 2rem; text-align: center;">Marker Categories</h3>
+
+      <div class="grid-3">
+        <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">🧪</span>
+            <h4 style="font-weight: 700; margin: 0;">Biomarkers</h4>
+          </div>
+          <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Blood-based lab measurements</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #f5f0fa; color: #7a12d4; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">ApoB</span>
+            <span style="background: #f5f0fa; color: #7a12d4; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">HbA1c</span>
+            <span style="background: #f5f0fa; color: #7a12d4; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">hs-CRP</span>
+            <span style="background: #f5f0fa; color: #7a12d4; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Ferritin</span>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">💪</span>
+            <h4 style="font-weight: 700; margin: 0;">Functional</h4>
+          </div>
+          <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Physical performance assessments</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #f0fdf4; color: #166534; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">VO₂ Max</span>
+            <span style="background: #f0fdf4; color: #166534; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Grip Strength</span>
+            <span style="background: #f0fdf4; color: #166534; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Gait Speed</span>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">📋</span>
+            <h4 style="font-weight: 700; margin: 0;">Questionnaires</h4>
+          </div>
+          <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Validated psychological assessments</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">PSQI (Sleep)</span>
+            <span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">PHQ-9</span>
+            <span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">GAD-7</span>
+            <span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">MoCA</span>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">⌚</span>
+            <h4 style="font-weight: 700; margin: 0;">Wearable</h4>
+          </div>
+          <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Device-tracked metrics</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #eff6ff; color: #1d4ed8; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">HRV</span>
+            <span style="background: #eff6ff; color: #1d4ed8; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Resting HR</span>
+            <span style="background: #eff6ff; color: #1d4ed8; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Sleep Score</span>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">📐</span>
+            <h4 style="font-weight: 700; margin: 0;">Anthropometric</h4>
+          </div>
+          <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Body composition measurements</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #fce7f3; color: #9d174d; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Waist/Height</span>
+            <span style="background: #fce7f3; color: #9d174d; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Body Fat %</span>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <span style="font-size: 1.5rem;">📊</span>
+            <h4 style="font-weight: 700; margin: 0;">Composite</h4>
+          </div>
+          <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Calculated health indices</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="background: #f5f5f5; color: #525252; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">Life's Essential 8</span>
+            <span style="background: #f5f5f5; color: #525252; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem;">HOMA-IR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Implementation Example -->
+      <h3 style="font-size: 1.5rem; font-weight: 700; margin: 4rem 0 2rem; text-align: center;">Sample: 49-Year-Old Male Profile</h3>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="dashboard-preview">
+          <div class="dashboard-header">
+            <span class="dashboard-dot red"></span>
+            <span class="dashboard-dot yellow"></span>
+            <span class="dashboard-dot green"></span>
+          </div>
+          <div class="dashboard-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <h3 style="font-size: 1.125rem; font-weight: 700; color: #0f131a;">Your Personalized Marker Panel</h3>
+                <p style="color: #6b7280; font-size: 0.85rem;">Male • Age 49 • Optimization Phase</p>
+              </div>
+              <div style="background: #f5f0fa; padding: 0.5rem 1rem; border-radius: 100px;">
+                <span style="color: #7a12d4; font-weight: 700; font-size: 0.85rem;">12 Core Markers</span>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="background: #f0f9ff; padding: 1rem; border-radius: 12px;">
+                <h4 style="font-size: 0.8rem; color: #1e40af; font-weight: 700; margin-bottom: 0.75rem;">♂️ MALE-SPECIFIC</h4>
+                <ul style="font-size: 0.85rem; color: #0f131a; list-style: none; padding: 0; margin: 0;">
+                  <li style="padding: 0.25rem 0;">• Testosterone</li>
+                  <li style="padding: 0.25rem 0;">• SHBG</li>
+                </ul>
+              </div>
+              <div style="background: #fffbeb; padding: 1rem; border-radius: 12px;">
+                <h4 style="font-size: 0.8rem; color: #92400e; font-weight: 700; margin-bottom: 0.75rem;">⏰ AGE 45-60</h4>
+                <ul style="font-size: 0.85rem; color: #0f131a; list-style: none; padding: 0; margin: 0;">
+                  <li style="padding: 0.25rem 0;">• Burnout Inventory</li>
+                  <li style="padding: 0.25rem 0;">• Advanced lipids</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="background: #fafbff; padding: 1rem; border-radius: 12px; margin-bottom: 1rem;">
+              <h4 style="font-size: 0.8rem; color: #7a12d4; font-weight: 700; margin-bottom: 0.75rem;">🌐 UNIVERSAL CORE</h4>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">ApoB</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">HbA1c</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">Omega-3 Index</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">VO₂ Max</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">Grip Strength</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">PSQI (Sleep)</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">Waist/Height</span>
+                <span style="background: white; padding: 0.35rem 0.75rem; border-radius: 8px; font-size: 0.8rem; border: 1px solid #e5e7eb;">PHQ-9</span>
+              </div>
+            </div>
+
+            <div style="background: #f0fdf4; padding: 1rem; border-radius: 12px; border-left: 3px solid #22c55e;">
+              <p style="color: #166534; font-size: 0.85rem; margin: 0;"><strong>💡 Why these markers?</strong> Based on research, these 12 markers explain ~85% of health variance for men in your age group. We skip the 50+ other markers that add noise without improving outcomes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Benefits -->
+      <div class="grid-3" style="margin-top: 3rem;">
+        <div class="card">
+          <span class="card-icon">🎯</span>
+          <h3 class="card-title">Focused, Not Overwhelming</h3>
+          <p class="card-text">12-15 markers instead of 100+. Every marker we track has direct lifestyle interventions.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🔬</span>
+          <h3 class="card-title">Research-Backed</h3>
+          <p class="card-text">Each marker chosen for its incremental R² value in predicting health outcomes.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">💰</span>
+          <h3 class="card-title">Cost-Effective</h3>
+          <p class="card-text">Essential panel costs ~$150-300 vs. $500+ for comprehensive panels with marginal benefit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Daily Experience</span>
+        <h2 class="section-title">The Dashboard</h2>
+        <p class="section-description">Your daily command center for health optimization.</p>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="dashboard-preview">
+          <div class="dashboard-header">
+            <span class="dashboard-dot red"></span>
+            <span class="dashboard-dot yellow"></span>
+            <span class="dashboard-dot green"></span>
+          </div>
+          <div class="dashboard-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 700; color: #0f131a;">Good morning, Sarah ☀️</h3>
+                <p style="color: #6b7280; font-size: 0.9rem;">Here's your health snapshot</p>
+              </div>
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7a12d4, #9333ea); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">SC</div>
+            </div>
+
+            <div class="dashboard-score">
+              <div class="dashboard-score-number">78</div>
+              <div class="dashboard-score-label">Health Score • ↑ 4 pts since last test</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="background: #f5f0fa; padding: 1rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 1.5rem; font-weight: 800; color: #7a12d4;">14/18</div>
+                <div style="font-size: 0.8rem; color: #6b7280;">Supplements</div>
+              </div>
+              <div style="background: #f5f0fa; padding: 1rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 1.5rem; font-weight: 800; color: #7a12d4;">2/3</div>
+                <div style="font-size: 0.8rem; color: #6b7280;">Meals</div>
+              </div>
+              <div style="background: #f5f0fa; padding: 1rem; border-radius: 12px; text-align: center;">
+                <div style="font-size: 1.5rem; font-weight: 800; color: #7a12d4;">5/8</div>
+                <div style="font-size: 0.8rem; color: #6b7280;">Water</div>
+              </div>
+            </div>
+
+            <div class="dashboard-progress">
+              <div class="dashboard-progress-label">
+                <span style="color: #0f131a; font-weight: 600;">Blood Markers</span>
+                <span style="color: #6b7280;">75%</span>
+              </div>
+              <div class="dashboard-progress-bar">
+                <div class="dashboard-progress-fill" style="width: 75%;"></div>
+              </div>
+            </div>
+
+            <div class="dashboard-progress">
+              <div class="dashboard-progress-label">
+                <span style="color: #0f131a; font-weight: 600;">Supplement Fit</span>
+                <span style="color: #6b7280;">82%</span>
+              </div>
+              <div class="dashboard-progress-bar">
+                <div class="dashboard-progress-fill" style="width: 82%;"></div>
+              </div>
+            </div>
+
+            <div style="background: #f0fdf4; padding: 1rem; border-radius: 12px; margin-top: 1.5rem; border-left: 3px solid #22c55e;">
+              <p style="color: #166534; font-size: 0.9rem;"><strong>💡 Insight:</strong> Your Omega-3 consistency is paying off! We predict your next blood test will show HDL improvement of 8-12%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Core Features</span>
+        <h2 class="section-title">What Makes Vibrantly Powerful</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="feature-card">
+          <div class="feature-icon">🩸</div>
+          <h3 class="feature-title">Blood Work Intelligence</h3>
+          <p class="feature-text">Upload any lab format. AI extracts 50+ biomarkers, compares to optimal ranges (not just "normal"), and explains everything in plain language.</p>
+          <ul class="feature-list">
+            <li>Smart PDF parsing</li>
+            <li>Optimal vs. reference ranges</li>
+            <li>Trend tracking over time</li>
+            <li>Symptom correlation</li>
+            <li>Clear action items</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💊</div>
+          <h3 class="feature-title">Supplement Stack Optimizer</h3>
+          <p class="feature-text">Your AI supplement pharmacist. Identifies gaps, redundancies, interactions, and creates optimized timing schedules.</p>
+          <ul class="feature-list">
+            <li>Gap analysis vs. blood work</li>
+            <li>Redundancy detection</li>
+            <li>Interaction warnings</li>
+            <li>Dose optimization</li>
+            <li>Timing recommendations</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🍽️</div>
+          <h3 class="feature-title">Meal Intelligence</h3>
+          <p class="feature-text">Food as medicine. Meal plans designed to move YOUR specific markers—not generic diet advice.</p>
+          <ul class="feature-list">
+            <li>Biomarker-targeted meals</li>
+            <li>Nutrient gap filling</li>
+            <li>Restaurant guidance</li>
+            <li>Grocery list generation</li>
+            <li>Recipe suggestions</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3 class="feature-title">Progress Tracking</h3>
+          <p class="feature-text">The motivation engine. Watch your markers improve over time and get predictive insights on your trajectory.</p>
+          <ul class="feature-list">
+            <li>Health score gamification</li>
+            <li>Trend visualization</li>
+            <li>Predictive insights</li>
+            <li>Win celebrations</li>
+            <li>Course corrections</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitive Section -->
+  <section id="competitive" class="section" style="background: #fafbff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Market Position</span>
+        <h2 class="section-title">Competitive Differentiation</h2>
+        <p class="section-description">The integration layer that connects ALL your health data into one actionable system.</p>
+      </div>
+
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>InsideTracker</th>
+            <th>Cronometer</th>
+            <th>Function</th>
+            <th class="highlight">Vibrantly</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blood Work Analysis</td>
+            <td>✅</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td class="highlight">✅</td>
+          </tr>
+          <tr>
+            <td>Supplement Optimization</td>
+            <td>⚠️ Generic</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td class="highlight">✅ Personalized</td>
+          </tr>
+          <tr>
+            <td>Meal Planning</td>
+            <td>⚠️ Generic</td>
+            <td>✅ Calorie-focused</td>
+            <td>❌</td>
+            <td class="highlight">✅ Marker-targeted</td>
+          </tr>
+          <tr>
+            <td>Connects All 3</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td class="highlight">✅ Integrated</td>
+          </tr>
+          <tr>
+            <td>Empathetic AI</td>
+            <td>⚠️</td>
+            <td>❌</td>
+            <td>⚠️</td>
+            <td class="highlight">✅</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>$600+/year</td>
+            <td>$50/year</td>
+            <td>$500/year</td>
+            <td class="highlight"><strong>$149/year</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Business Model Section -->
+  <section id="business" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Business Model</span>
+        <h2 class="section-title">How We Make Money</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="pricing-card">
+          <h3 class="pricing-name">Free Tier</h3>
+          <div class="pricing-price">$0</div>
+          <div class="pricing-period">Forever free</div>
+          <ul class="pricing-features">
+            <li>Upload 1 blood test</li>
+            <li>Basic supplement analysis (up to 10)</li>
+            <li>General recommendations</li>
+            <li>Limited dashboard access</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card featured">
+          <h3 class="pricing-name">Premium</h3>
+          <div class="pricing-price">$149</div>
+          <div class="pricing-period">per year ($19.99/month)</div>
+          <ul class="pricing-features">
+            <li>Unlimited blood work uploads</li>
+            <li>Full supplement stack analysis</li>
+            <li>Personalized meal plans</li>
+            <li>Predictive insights</li>
+            <li>AI health assistant chat</li>
+            <li>Family accounts (up to 4)</li>
+            <li>Progress tracking & trends</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-3" style="margin-top: 3rem;">
+        <div class="card">
+          <span class="card-icon">🏢</span>
+          <h3 class="card-title">B2B Partnerships</h3>
+          <p class="card-text">White-label for labs, supplement brands, insurance companies, and corporate wellness programs.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🛒</span>
+          <h3 class="card-title">Supplement Marketplace</h3>
+          <p class="card-text">Affiliate revenue on recommended products. "Buy what you need" integrated into the experience.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🧪</span>
+          <h3 class="card-title">Lab Test Referrals</h3>
+          <p class="card-text">Partner discounts on advanced tests (NMR, genetic panels) with revenue share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mindvalley Section -->
+  <section id="mindvalley" class="mv-section">
+    <div class="container">
+      <div class="section-header" style="color: white;">
+        <span class="section-eyebrow" style="background: rgba(255,255,255,0.2); color: white;">Strategic Fit</span>
+        <h2 class="section-title" style="color: white;">The Mindvalley Advantage</h2>
+        <p class="section-description" style="color: rgba(255,255,255,0.9);">Why this is a perfect Mindvalley product.</p>
+      </div>
+
+      <div class="mv-grid">
+        <div class="mv-card">
+          <span class="mv-card-icon">👥</span>
+          <h3 class="mv-card-title">Built-In Audience</h3>
+          <p class="mv-card-text">Millions of health-conscious members already seeking optimization. Day one distribution.</p>
+        </div>
+        <div class="mv-card">
+          <span class="mv-card-icon">💊</span>
+          <h3 class="mv-card-title">States Integration</h3>
+          <p class="mv-card-text">Direct connection to Mindvalley States products. "Your States stack analyzed against your blood work."</p>
+        </div>
+        <div class="mv-card">
+          <span class="mv-card-icon">📚</span>
+          <h3 class="mv-card-title">Quest Potential</h3>
+          <p class="mv-card-text">"Optimize Your Blood Work" - 30-day program with app companion. Curriculum + tool = transformation.</p>
+        </div>
+        <div class="mv-card">
+          <span class="mv-card-icon">🌍</span>
+          <h3 class="mv-card-title">Community Layer</h3>
+          <p class="mv-card-text">Share protocols, compare approaches. "What worked for people with similar markers."</p>
+        </div>
+        <div class="mv-card">
+          <span class="mv-card-icon">🎓</span>
+          <h3 class="mv-card-title">Expert Access</h3>
+          <p class="mv-card-text">Premium tier: Live Q&A with longevity doctors. Partner with names in the space.</p>
+        </div>
+        <div class="mv-card">
+          <span class="mv-card-icon">💜</span>
+          <h3 class="mv-card-title">Brand Trust</h3>
+          <p class="mv-card-text">Mindvalley's reputation in transformation extends naturally to health optimization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap Section -->
+  <section id="roadmap" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Timeline</span>
+        <h2 class="section-title">Product Roadmap</h2>
+      </div>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <div class="roadmap">
+          <div class="roadmap-item">
+            <div class="roadmap-phase">Phase 1 — Q1 2025</div>
+            <h3 class="roadmap-title">MVP Launch</h3>
+            <ul class="roadmap-list">
+              <li>Blood work upload</li>
+              <li>AI analysis</li>
+              <li>Supplement input</li>
+              <li>Basic recommendations</li>
+              <li>Web app</li>
+            </ul>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-phase">Phase 2 — Q2-Q3 2025</div>
+            <h3 class="roadmap-title">Growth Features</h3>
+            <ul class="roadmap-list">
+              <li>iOS & Android</li>
+              <li>Photo scanning</li>
+              <li>Full meal planning</li>
+              <li>Progress tracking</li>
+              <li>Lab integrations</li>
+            </ul>
+          </div>
+
+          <div class="roadmap-item">
+            <div class="roadmap-phase">Phase 3 — Q4 2025+</div>
+            <h3 class="roadmap-title">Scale & Expand</h3>
+            <ul class="roadmap-list">
+              <li>Community features</li>
+              <li>Expert consultations</li>
+              <li>Supplement marketplace</li>
+              <li>Wearable integrations</li>
+              <li>Corporate wellness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformation Section -->
+  <section class="section" style="background: #fafbff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Why</span>
+        <h2 class="section-title">Why This Will Be Life-Transforming</h2>
+      </div>
+
+      <div class="transform-box">
+        <div class="transform-item">
+          <div class="transform-number">1</div>
+          <div class="transform-content">
+            <h4>Removes Confusion</h4>
+            <p>Health data is overwhelming. We say: "Here's what matters. Do this."</p>
+          </div>
+        </div>
+        <div class="transform-item">
+          <div class="transform-number">2</div>
+          <div class="transform-content">
+            <h4>Creates Agency</h4>
+            <p>Stop blindly following influencers. Understand YOUR body and make informed decisions.</p>
+          </div>
+        </div>
+        <div class="transform-item">
+          <div class="transform-number">3</div>
+          <div class="transform-content">
+            <h4>Closes the Loop</h4>
+            <p>Blood → Supplements → Food → Results → Optimize. Continuous improvement.</p>
+          </div>
+        </div>
+        <div class="transform-item">
+          <div class="transform-number">4</div>
+          <div class="transform-content">
+            <h4>Empathetic AI</h4>
+            <p>Not scary warnings. Human explanations that empower, not frighten.</p>
+          </div>
+        </div>
+        <div class="transform-item">
+          <div class="transform-number">5</div>
+          <div class="transform-content">
+            <h4>Visible Progress</h4>
+            <p>Watching your markers improve over time is profoundly motivating. "My protocol is working" changes lives.</p>
+          </div>
+        </div>
+        <div class="transform-item">
+          <div class="transform-number">6</div>
+          <div class="transform-content">
+            <h4>Democratizes Longevity</h4>
+            <p>What was once $10K/year concierge medicine, now $149/year for everyone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Ready to Build the Future of Health?</h2>
+      <p class="cta-text">Vibrantly is the health dashboard that actually makes sense of your data and tells you what to do.</p>
+      <div class="cta-actions">
+        <a href="#" class="cta-btn cta-btn-primary">
+          <span>🚀</span>
+          <span>Start Building MVP</span>
+        </a>
+        <a href="#" class="cta-btn cta-btn-secondary">
+          <span>📋</span>
+          <span>View Technical Spec</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p><strong>Vibrantly Product Vision</strong> • Version 1.0 • December 2025</p>
+      <p style="margin-top: 0.5rem;">Mindvalley • Confidential</p>
+    </div>
+  </footer>
+
+</body>
+</html>

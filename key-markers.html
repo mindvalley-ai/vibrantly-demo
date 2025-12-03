@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Key Markers — Vishen Lakhiani | Vibrantly</title>
+  <meta name="description" content="Personalized biomarker panel for men aged 45-60. Track the essential markers that matter most for longevity and optimization." />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#c4dd00" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Navigation Sidebar */
+    .nav-sidebar {
+      width: 280px;
+      background: #181d26;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      padding: 2rem 0;
+      color: white;
+      z-index: 1000;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-profile {
+      padding: 0 2rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .nav-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #232d14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border: 3px solid #c4dd00;
+    }
+
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background: rgba(196, 221, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .nav-link.active {
+      background: rgba(196, 221, 0, 0.15);
+      font-weight: 700;
+      border-left: 3px solid #c4dd00;
+      margin-left: -3px;
+    }
+
+    .nav-icon {
+      font-size: 1.5rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 280px;
+      flex: 1;
+      padding: 3rem;
+      max-width: 1400px;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: #4b5563;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(196, 221, 0, 0.15);
+    }
+
+    /* Section Headers */
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      color: #232d14;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.05rem;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Profile Banner */
+    .profile-banner {
+      background: linear-gradient(135deg, #181d26 0%, #232d14 100%);
+      border-radius: 24px;
+      padding: 2.5rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .profile-info h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-info p {
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+
+    .profile-stats {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .profile-stat {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem 1.75rem;
+      border-radius: 16px;
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .profile-stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .profile-stat-label {
+      font-size: 0.8rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    /* Category Tabs */
+    .category-nav {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding: 0.5rem;
+      background: #e5e7eb;
+      border-radius: 16px;
+    }
+
+    .category-tab {
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      background: transparent;
+      color: #4b5563;
+    }
+
+    .category-tab:hover {
+      background: rgba(196, 221, 0, 0.2);
+      color: #232d14;
+    }
+
+    .category-tab.active {
+      background: #c4dd00;
+      color: #181d26;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Marker Card */
+    .marker-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border: 2px solid #f3f4f6;
+      transition: all 0.3s ease;
+    }
+
+    .marker-card:hover {
+      border-color: #c4dd00;
+      box-shadow: 0 4px 12px rgba(196, 221, 0, 0.2);
+    }
+
+    .marker-card.has-data {
+      border-left: 4px solid #c4dd00;
+    }
+
+    .marker-card.needs-test {
+      border-left: 4px solid #f59e0b;
+    }
+
+    .marker-card.attention {
+      border-left: 4px solid #ef4444;
+    }
+
+    .marker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .marker-title-section {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .marker-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.25rem;
+    }
+
+    .marker-category-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 100px;
+      font-weight: 600;
+    }
+
+    .marker-category-tag.male { background: #dbeafe; color: #1e40af; }
+    .marker-category-tag.age { background: #fef3c7; color: #92400e; }
+    .marker-category-tag.universal { background: rgba(196, 221, 0, 0.2); color: #232d14; }
+    .marker-category-tag.functional { background: #dcfce7; color: #166534; }
+    .marker-category-tag.questionnaire { background: #fce7f3; color: #9d174d; }
+    .marker-category-tag.anthropometric { background: #e0e7ff; color: #3730a3; }
+
+    .marker-status {
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .marker-status.optimal { background: rgba(196, 221, 0, 0.2); color: #232d14; }
+    .marker-status.good { background: #dbeafe; color: #1e40af; }
+    .marker-status.attention { background: #fef3c7; color: #92400e; }
+    .marker-status.high { background: #fee2e2; color: #991b1b; }
+    .marker-status.not-tested { background: #f3f4f6; color: #6b7280; }
+
+    .marker-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .marker-body {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .marker-values {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .marker-value-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .marker-value-row:last-child {
+      border-bottom: none;
+    }
+
+    .marker-value-label {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .marker-value-number {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f131a;
+    }
+
+    .marker-value-number.your-value {
+      color: #232d14;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .marker-value-number.not-available {
+      color: #9ca3af;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .marker-description {
+      font-size: 0.9rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .marker-why {
+      background: rgba(196, 221, 0, 0.08);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 0.75rem;
+    }
+
+    .marker-why-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #232d14;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Progress Bar */
+    .marker-progress {
+      margin-top: 1rem;
+    }
+
+    .progress-bar-wrapper {
+      height: 8px;
+      background: #f3f4f6;
+      border-radius: 100px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 1s ease-out;
+    }
+
+    .progress-bar.excellent { background: linear-gradient(90deg, #84cc16, #c4dd00); }
+    .progress-bar.good { background: linear-gradient(90deg, #3b82f6, #2563eb); }
+    .progress-bar.warning { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .progress-bar.danger { background: linear-gradient(90deg, #ef4444, #dc2626); }
+
+    .progress-markers {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    /* Summary Stats */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .summary-stat {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 2px solid #f3f4f6;
+    }
+
+    .summary-stat-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #0f131a;
+      line-height: 1;
+    }
+
+    .summary-stat-label {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 0.25rem;
+    }
+
+    .summary-stat.optimal .summary-stat-number { color: #84cc16; }
+    .summary-stat.attention .summary-stat-number { color: #f59e0b; }
+    .summary-stat.missing .summary-stat-number { color: #6b7280; }
+
+    /* Category Section */
+    .category-section {
+      margin-bottom: 3rem;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .category-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .category-icon.blood { background: #fee2e2; }
+    .category-icon.hormones { background: #dbeafe; }
+    .category-icon.functional { background: #dcfce7; }
+    .category-icon.mental { background: #fce7f3; }
+    .category-icon.body { background: #e0e7ff; }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0f131a;
+    }
+
+    .category-count {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .nav-sidebar.mobile-open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+      }
+
+      .mobile-menu-btn {
+        display: block !important;
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-stats {
+        justify-content: center;
+      }
+    }
+
+    .mobile-menu-btn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 999;
+      background: #181d26;
+      color: #c4dd00;
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(24, 29, 38, 0.3);
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+      }
+
+      /* Score section responsive */
+      .glass-card > div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+    }
+
+    /* Score section mobile override */
+    @media (max-width: 600px) {
+      .glass-card svg {
+        width: 160px;
+        height: 160px;
+      }
+
+      .glass-card div[style*="font-size: 5rem"] {
+        font-size: 3.5rem !important;
+      }
+
+      .glass-card div[style*="font-size: 3.5rem"] {
+        font-size: 2.5rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+
+  <!-- Navigation Sidebar -->
+  <nav class="nav-sidebar" id="navSidebar">
+    <div class="nav-profile">
+      <div class="nav-avatar">🌟</div>
+      <div class="nav-name">Vishen Lakhiani</div>
+      <div class="nav-subtitle">Male, 49 years old</div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="blood-work.html" class="nav-link">
+          <span class="nav-icon">🩸</span>
+          <span>Blood Work</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="key-markers.html" class="nav-link active">
+          <span class="nav-icon">🎯</span>
+          <span>Key Markers</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="health-kit.html" class="nav-link">
+          <span class="nav-icon">📱</span>
+          <span>Health Kit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="longevity.html" class="nav-link">
+          <span class="nav-icon">⏳</span>
+          <span>Longevity</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="supplements.html" class="nav-link">
+          <span class="nav-icon">💊</span>
+          <span>Supplements</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="meal-plan.html" class="nav-link">
+          <span class="nav-icon">🍽️</span>
+          <span>Meal Plan</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">Your Key Markers</h1>
+      <p class="page-subtitle">
+        The complete biomarker panel for men aged 45-60. These 24 markers across 7 domains explain ~85% of health outcomes for your demographic—organized by role: Core (Medical), Popular, and Essentials.
+      </p>
+    </div>
+
+    <!-- LONGEVITY SCORE & BIOLOGICAL AGE SECTION -->
+    <div class="glass-card" style="background: linear-gradient(135deg, #181d26 0%, #232d14 100%); color: white; margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+
+        <!-- Longevity Score -->
+        <div style="text-align: center;">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.7; margin-bottom: 0.5rem;">Vibrantly Longevity Score™</div>
+          <div style="position: relative; display: inline-block;">
+            <svg width="200" height="200" viewBox="0 0 200 200">
+              <!-- Background circle -->
+              <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="12"/>
+              <!-- Progress arc (72/100 = 72%) -->
+              <circle cx="100" cy="100" r="85" fill="none" stroke="url(#scoreGradient)" stroke-width="12"
+                      stroke-linecap="round" stroke-dasharray="534" stroke-dashoffset="149"
+                      transform="rotate(-90 100 100)"/>
+              <defs>
+                <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#84cc16"/>
+                  <stop offset="50%" style="stop-color:#c4dd00"/>
+                  <stop offset="100%" style="stop-color:#a3e635"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+              <div style="font-size: 3.5rem; font-weight: 800; line-height: 1;">72</div>
+              <div style="font-size: 1rem; opacity: 0.7;">/100</div>
+            </div>
+          </div>
+          <div style="margin-top: 1rem;">
+            <span style="background: #c4dd00; color: #181d26; padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 700;">GOOD</span>
+          </div>
+          <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.75rem; max-width: 280px; margin-left: auto; margin-right: auto;">
+            Based on 6 of 24 markers. Score will improve with more data.
+          </p>
+        </div>
+
+        <!-- Biological Age -->
+        <div style="text-align: center;">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.7; margin-bottom: 0.5rem;">Estimated Biological Age</div>
+          <div style="display: flex; align-items: baseline; justify-content: center; gap: 0.5rem;">
+            <span style="font-size: 5rem; font-weight: 800; background: linear-gradient(135deg, #c4dd00, #a3e635); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">43</span>
+            <span style="font-size: 1.5rem; opacity: 0.7;">years</span>
+          </div>
+          <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.5rem;">
+            <span style="font-size: 0.9rem; opacity: 0.7;">Chronological Age: 49</span>
+            <span style="background: #c4dd00; color: #181d26; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700;">-6 YEARS</span>
+          </div>
+          <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 1rem; max-width: 280px; margin-left: auto; margin-right: auto;">
+            Your body is aging slower than average. Add functional tests for precision.
+          </p>
+        </div>
+      </div>
+
+      <!-- Score Breakdown -->
+      <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; opacity: 0.9;">Domain Score Breakdown</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+
+          <!-- Cardiometabolic -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">❤️ Cardiometabolic</span>
+              <span style="font-weight: 700; color: #f59e0b;">15/24</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 63%; background: linear-gradient(90deg, #f59e0b, #eab308); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">HbA1c ✓ WHtR ✓ LDL ⚠️ | ApoB, LE8 missing</div>
+          </div>
+
+          <!-- Mobility -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">💪 Mobility</span>
+              <span style="font-weight: 700; color: #6b7280;">?/20</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 0%; background: linear-gradient(90deg, #6b7280, #9ca3af); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">No data yet — VO₂, Grip, Gait needed</div>
+          </div>
+
+          <!-- Sleep Health -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">🌙 Sleep Health</span>
+              <span style="font-weight: 700; color: #6b7280;">?/14</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 0%; background: linear-gradient(90deg, #6b7280, #9ca3af); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">No data yet — PSQI, ISI needed</div>
+          </div>
+
+          <!-- Mental Health -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">🧠 Mental Health</span>
+              <span style="font-weight: 700; color: #6b7280;">?/14</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 0%; background: linear-gradient(90deg, #6b7280, #9ca3af); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">No data yet — PHQ-9, GAD-7, MBI needed</div>
+          </div>
+
+          <!-- Social Connection -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">👥 Social</span>
+              <span style="font-weight: 700; color: #6b7280;">?/10</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 0%; background: linear-gradient(90deg, #6b7280, #9ca3af); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">No data yet — LSNS-6, UCLA needed</div>
+          </div>
+
+          <!-- Nutrition -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">🥗 Nutrition</span>
+              <span style="font-weight: 700; color: #6b7280;">?/10</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 0%; background: linear-gradient(90deg, #6b7280, #9ca3af); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">No data yet — MEDAS, Omega-3 needed</div>
+          </div>
+
+          <!-- Hormonal -->
+          <div style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-size: 0.85rem;">⚡ Hormonal</span>
+              <span style="font-weight: 700; color: #c4dd00;">7/8</span>
+            </div>
+            <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: 88%; background: linear-gradient(90deg, #84cc16, #c4dd00); border-radius: 100px;"></div>
+            </div>
+            <div style="font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem;">Testosterone ✓ Excellent | Cortisol missing</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Methodology Note -->
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 12px; font-size: 0.8rem; opacity: 0.8;">
+        <strong>📊 Scoring Methodology:</strong> Weighted by R² contribution to all-cause mortality (men 45-60). Domain weights: Cardiometabolic 24%, Mobility 20%, Sleep 14%, Mental Health 14%, Social 10%, Nutrition 10%, Hormonal 8%. Missing markers scored at 50th percentile. Biological age uses Levine-derived coefficients adjusted for available biomarkers. <a href="#scoring-details" style="color: #22c55e;">Learn more →</a>
+      </div>
+    </div>
+
+    <!-- DETAILED MARKER SCORES -->
+    <div class="glass-card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem; color: #0f131a;">Your Marker Scores (Available Data)</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+
+        <!-- HbA1c Score -->
+        <div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 16px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+            <div>
+              <div style="font-weight: 700; color: #0f131a;">HbA1c</div>
+              <div style="font-size: 0.85rem; color: #6b7280;">Glycemic Control</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">95</div>
+              <div style="font-size: 0.75rem; color: #6b7280;">/100</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <span style="color: #6b7280;">Your Value:</span>
+            <span style="font-weight: 600; color: #0f131a;">4.9%</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #6b7280;">Optimal Range:</span>
+            <span style="color: #22c55e;">4.8–5.4%</span>
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #166534; background: #dcfce7; padding: 0.5rem; border-radius: 8px;">
+            ✓ Excellent glucose control. -2 years biological age.
+          </div>
+        </div>
+
+        <!-- Testosterone Score -->
+        <div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 16px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+            <div>
+              <div style="font-weight: 700; color: #0f131a;">Testosterone</div>
+              <div style="font-size: 0.85rem; color: #6b7280;">Hormonal Vitality</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">98</div>
+              <div style="font-size: 0.75rem; color: #6b7280;">/100</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <span style="color: #6b7280;">Your Value:</span>
+            <span style="font-weight: 600; color: #0f131a;">30.5 nmol/L (879 ng/dL)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #6b7280;">Optimal (45-60):</span>
+            <span style="color: #22c55e;">>20 nmol/L</span>
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #166534; background: #dcfce7; padding: 0.5rem; border-radius: 8px;">
+            ✓ Top 5% for age. -3 years biological age.
+          </div>
+        </div>
+
+        <!-- Waist-to-Height Score -->
+        <div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 16px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+            <div>
+              <div style="font-weight: 700; color: #0f131a;">Waist-to-Height Ratio</div>
+              <div style="font-size: 0.85rem; color: #6b7280;">Body Composition</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">98</div>
+              <div style="font-size: 0.75rem; color: #6b7280;">/100</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <span style="color: #6b7280;">Your Value:</span>
+            <span style="font-weight: 600; color: #0f131a;">0.46 (81cm ÷ 176cm)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #6b7280;">Optimal:</span>
+            <span style="color: #22c55e;"><0.50</span>
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #166534; background: #dcfce7; padding: 0.5rem; border-radius: 8px;">
+            ✓ Excellent. Low visceral fat. -2 years biological age.
+          </div>
+        </div>
+
+        <!-- LDL Score -->
+        <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 16px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+            <div>
+              <div style="font-weight: 700; color: #0f131a;">LDL Cholesterol</div>
+              <div style="font-size: 0.85rem; color: #6b7280;">Cardiovascular Risk</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #ef4444;">35</div>
+              <div style="font-size: 0.75rem; color: #6b7280;">/100</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <span style="color: #6b7280;">Your Value:</span>
+            <span style="font-weight: 600; color: #ef4444;">171 mg/dL</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #6b7280;">Optimal (longevity):</span>
+            <span style="color: #22c55e;"><100 mg/dL</span>
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #991b1b; background: #fee2e2; padding: 0.5rem; border-radius: 8px;">
+            ⚠️ High. Get ApoB test. +2 years biological age.
+          </div>
+        </div>
+
+        <!-- HDL Score -->
+        <div style="background: #fffbeb; border: 2px solid #f59e0b; border-radius: 16px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+            <div>
+              <div style="font-weight: 700; color: #0f131a;">HDL Cholesterol</div>
+              <div style="font-size: 0.85rem; color: #6b7280;">Protective Lipid</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #f59e0b;">65</div>
+              <div style="font-size: 0.75rem; color: #6b7280;">/100</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <span style="color: #6b7280;">Your Value:</span>
+            <span style="font-weight: 600; color: #0f131a;">51 mg/dL</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #6b7280;">Optimal (men):</span>
+            <span style="color: #22c55e;">>60 mg/dL</span>
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #92400e; background: #fef3c7; padding: 0.5rem; border-radius: 8px;">
+            ◐ Borderline. Increase omega-3, exercise. +0.5 years.
+          </div>
+        </div>
+
+        <!-- BMI Score -->
+        <div style="background: #f0fdf4; border: 2px solid #22c55e; border-radius: 16px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+            <div>
+              <div style="font-weight: 700; color: #0f131a;">BMI</div>
+              <div style="font-size: 0.85rem; color: #6b7280;">Weight Status</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">95</div>
+              <div style="font-size: 0.75rem; color: #6b7280;">/100</div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem;">
+            <span style="color: #6b7280;">Your Value:</span>
+            <span style="font-weight: 600; color: #0f131a;">22.0 kg/m² (68kg)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #6b7280;">Optimal:</span>
+            <span style="color: #22c55e;">20–25 kg/m²</span>
+          </div>
+          <div style="margin-top: 0.75rem; font-size: 0.8rem; color: #166534; background: #dcfce7; padding: 0.5rem; border-radius: 8px;">
+            ✓ Ideal weight for height. -1 year biological age.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Biological Age Calculation Summary -->
+      <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, #f5f0fa, #e8e0f0); border-radius: 16px;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #0f131a;">🧬 Biological Age Calculation</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+          <div style="text-align: center; padding: 0.75rem; background: white; border-radius: 12px;">
+            <div style="font-size: 0.75rem; color: #6b7280;">Chronological</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #0f131a;">49</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: white; border-radius: 12px;">
+            <div style="font-size: 0.75rem; color: #6b7280;">HbA1c Effect</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">-2</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: white; border-radius: 12px;">
+            <div style="font-size: 0.75rem; color: #6b7280;">Testosterone</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">-3</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: white; border-radius: 12px;">
+            <div style="font-size: 0.75rem; color: #6b7280;">WHtR Effect</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">-2</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: white; border-radius: 12px;">
+            <div style="font-size: 0.75rem; color: #6b7280;">LDL/HDL</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #ef4444;">+2.5</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: white; border-radius: 12px;">
+            <div style="font-size: 0.75rem; color: #6b7280;">BMI Effect</div>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">-0.5</div>
+          </div>
+          <div style="text-align: center; padding: 0.75rem; background: linear-gradient(135deg, #22c55e, #10b981); border-radius: 12px; color: white;">
+            <div style="font-size: 0.75rem; opacity: 0.9;">Biological Age</div>
+            <div style="font-size: 1.5rem; font-weight: 800;">43</div>
+          </div>
+        </div>
+        <p style="font-size: 0.85rem; color: #4b5563; margin: 0;">
+          <strong>Confidence: Medium (6/24 markers).</strong> Your excellent metabolic and hormonal markers offset elevated LDL. Add functional tests (VO₂ max, grip strength) and ApoB for higher precision. Missing data defaults to age-average, which may underestimate your true biological age advantage.
+        </p>
+      </div>
+    </div>
+
+    <!-- Profile Banner -->
+    <div class="profile-banner">
+      <div class="profile-grid">
+        <div class="profile-info">
+          <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.9; margin-bottom: 0.5rem;">Personalized Panel</div>
+          <h2>Male • Age 49 • Optimization Phase</h2>
+          <p>Your markers are curated based on research for men aged 45-60, focusing on cardiovascular health, hormonal optimization, and longevity predictors.</p>
+        </div>
+        <div class="profile-stats">
+          <div class="profile-stat">
+            <div class="profile-stat-number">24</div>
+            <div class="profile-stat-label">Total Markers</div>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-number">7</div>
+            <div class="profile-stat-label">Domains</div>
+          </div>
+          <div class="profile-stat">
+            <div class="profile-stat-number">17</div>
+            <div class="profile-stat-label">Core Medical</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="summary-grid">
+      <div class="summary-stat" style="border-color: #c4dd00;">
+        <div class="summary-stat-icon">🩺</div>
+        <div class="summary-stat-number" style="color: #232d14;">17</div>
+        <div class="summary-stat-label">Core (Medical)</div>
+      </div>
+      <div class="summary-stat" style="border-color: #3b82f6;">
+        <div class="summary-stat-icon">⭐</div>
+        <div class="summary-stat-number" style="color: #3b82f6;">2</div>
+        <div class="summary-stat-label">Popular</div>
+      </div>
+      <div class="summary-stat" style="border-color: #84cc16;">
+        <div class="summary-stat-icon">📊</div>
+        <div class="summary-stat-number" style="color: #84cc16;">5</div>
+        <div class="summary-stat-label">Essentials</div>
+      </div>
+      <div class="summary-stat">
+        <div class="summary-stat-icon">🎯</div>
+        <div class="summary-stat-number">24</div>
+        <div class="summary-stat-label">Total Markers</div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 1: Cardiometabolic Health -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon blood">❤️</div>
+        <div>
+          <h2 class="category-title">Cardiometabolic Health</h2>
+          <div class="category-count">5 markers • Foundation for heart health and metabolic function</div>
+        </div>
+      </div>
+
+      <!-- ApoB -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">ApoB (Apolipoprotein B)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Tested</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Test Recommended</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal Target</span>
+              <span class="marker-value-number">&lt;90 mg/dL</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">4% (cumulative: 4%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Amount of "bad-cholesterol" particles that build plaque in arteries.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Direct read-out of atherogenic particle load; biggest single predictor. Large U.S. cohort showed ApoB independently predicted all-cause & CVD mortality, outperforming LDL-C.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Mediterranean-style diet rich in plants, nuts, fish; reduce ultra-processed food</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Life's Essential 8 -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Life's Essential 8</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag" style="background: #e0e7ff; color: #3730a3;">Composite</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal Score</span>
+              <span class="marker-value-number">&gt;80/100</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">4% (cumulative: 8%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Score of how heart-healthy your habits and vitals are. Includes: diet quality, physical activity, nicotine exposure, sleep health, BMI, blood lipids, blood glucose, and blood pressure.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Multibehaviour score; adds another 4% beyond ApoB. Uses national NHANES sample; higher LE8 linked to markedly better cardiovascular-health and lower event risk.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Optimise sleep, daily activity, diet quality, weight, BP, glucose, nicotine avoidance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waist-to-Height Ratio -->
+      <div class="marker-card has-data">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Waist-to-Height Ratio</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag anthropometric">Anthropometric</span>
+          </div>
+          <span class="marker-status optimal">Excellent</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Ratio</span>
+              <span class="marker-value-number your-value">0.46</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal</span>
+              <span class="marker-value-number">&lt;0.5</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">2% (cumulative: 10%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Belly size relative to height—indicator of harmful visceral fat. Simple rule: Keep waist &lt; half your height.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Cheap visceral-fat proxy. Stronger predictor of incident HF hospitalisation than BMI or waist circumference alone.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Your Status</div>
+              <p>Excellent! Your ratio of 0.46 (81cm waist ÷ 176cm height) is well below the 0.5 threshold. Low visceral fat risk.</p>
+            </div>
+          </div>
+        </div>
+        <div class="marker-progress">
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar excellent" style="width: 92%;"></div>
+          </div>
+          <div class="progress-markers">
+            <span>0.40</span>
+            <span>Optimal (&lt;0.5)</span>
+            <span>0.60</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HbA1c -->
+      <div class="marker-card has-data">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">HbA1c (Glycated Hemoglobin)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+          </div>
+          <span class="marker-status optimal">Excellent</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number your-value">4.9%</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal Target</span>
+              <span class="marker-value-number">&lt;5.4%</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">2% (cumulative: 12%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Average blood-sugar level over last 3 months.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Microsimulation shows lowering HbA1c to guideline targets adds ≈3.8 life-years; easily obtained test. Captures dysglycaemia risk the others miss.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Your Status</div>
+              <p>Outstanding! Your HbA1c of 4.9% indicates excellent glucose control. Continue low-GI eating and regular exercise.</p>
+            </div>
+          </div>
+        </div>
+        <div class="marker-progress">
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar excellent" style="width: 91%;"></div>
+          </div>
+          <div class="progress-markers">
+            <span>4.0%</span>
+            <span>Optimal (&lt;5.4%)</span>
+            <span>5.7%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weight -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Weight</div>
+            <span class="marker-category-tag" style="background: #dcfce7; color: #166534;">Essentials</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Behavioral Data</span>
+          </div>
+          <span class="marker-status not-tested">Track Daily</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Enter in App</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Target</span>
+              <span class="marker-value-number">Personal Goal</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Daily body weight tracking for trend analysis.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Track</div>
+              <p>Weight trends over time reveal metabolic health patterns. Track consistently (same time, same conditions) for actionable data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 2: Mobility -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon functional">💪</div>
+        <div>
+          <h2 class="category-title">Mobility</h2>
+          <div class="category-count">4 markers • Physical function that predicts longevity better than most blood tests</div>
+        </div>
+      </div>
+
+      <!-- Gait Speed -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Usual Gait Speed (4m)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag functional">Functional</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Tested</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Test Recommended</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Healthy Target</span>
+              <span class="marker-value-number">&gt;1.0 m/s</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">5% (cumulative: 5%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> How fast you normally walk—a whole-body performance snapshot.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Integrates strength, balance, CRF; anchors the mobility domain. Pooled data (97k adults) showed each 0.1 m/s slower speed raised loss-of-ADL risk by 12%.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Strength + balance training, brisk daily walking</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VO2 Max -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">VO₂ Max (Wearable Estimate)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Wearable</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Tested</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Check Apple Watch/Garmin</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal (Age 45-54)</span>
+              <span class="marker-value-number">&gt;40 mL/kg/min</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">3% (cumulative: 8%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Maximum oxygen your body can use—your cardio "engine size." <strong>The #1 predictor of all-cause mortality.</strong></p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Peak METs (highly correlated with smartwatch VO₂ max estimates) demonstrated 4-fold gradient in mortality; validates targeting CRF with wearables.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Regular vigorous cardio (HIIT, running, cycling)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grip Strength -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Grip Strength</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag functional">Functional</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Tested</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Test Recommended</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Target (Men 45-49)</span>
+              <span class="marker-value-number">&gt;45 kg</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">2% (cumulative: 10%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Hand-squeeze force—quick proxy for total muscle strength.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Flags sarcopenia missed by gait & VO₂. Each SD lower strength raised disability risk 1.46-fold; low-cost dynamometer test (~$35).</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Progressive resistance training (weights, bands)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Steps -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Steps</div>
+            <span class="marker-category-tag" style="background: #dcfce7; color: #166534;">Essentials</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Behavioral Data</span>
+          </div>
+          <span class="marker-status not-tested">Track Daily</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Sync from Wearable</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Target</span>
+              <span class="marker-value-number">8,000-10,000/day</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Daily movement tracking. Research shows mortality risk plateaus around 8,000-10,000 steps.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Track</div>
+              <p>Daily accountability for non-exercise activity thermogenesis (NEAT). Consistency matters more than occasional big days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 3: Sleep Health -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon" style="background: #dbeafe;">🌙</div>
+        <div>
+          <h2 class="category-title">Sleep Health</h2>
+          <div class="category-count">4 markers • Foundation for recovery, cognition, and metabolic health</div>
+        </div>
+      </div>
+
+      <!-- PSQI -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">PSQI (Pittsburgh Sleep Quality Index)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Good Sleep</span>
+              <span class="marker-value-number">&lt;5</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">3% (cumulative: 15%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Sleep quality over the past month—duration, efficiency, disturbances.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Opens the sleep domain; links to cognitive decline & CVD. Meta-analysis found poor PSQI scores raise mortality RR ≈1.4.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Sleep-hygiene protocol, light/dark exposure, CBT-I</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actigraphy Sleep Efficiency -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Actigraphy Sleep Efficiency</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Wearable</span>
+          </div>
+          <span class="marker-status not-tested">Sync from Wearable</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Check Apple Watch/Oura</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal</span>
+              <span class="marker-value-number">&gt;85%</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">2.5% (cumulative: 17.5%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Objective wearable-tracked ratio of sleep vs. time in bed.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Objective sleep data beyond self-report. Efficiency &lt;75% linked to cognitive impairment 2.4× risk in longitudinal studies.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Stimulus-control techniques, restrict bed to sleep only</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Insomnia Severity Index -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Insomnia Severity Index (ISI)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">No Insomnia</span>
+              <span class="marker-value-number">0-7</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">1.5% (cumulative: 19%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> 7-item insomnia screen covering sleep-onset, maintenance, early waking.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Detects clinical insomnia missed by PSQI. Chronic insomnia (ISI ≥15) doubles risk of depression onset; identifies CBT-I candidates.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>CBT-I (cognitive behavioral therapy for insomnia)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sleep Score -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Sleep Score</div>
+            <span class="marker-category-tag" style="background: #dcfce7; color: #166534;">Essentials</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Behavioral Data</span>
+          </div>
+          <span class="marker-status not-tested">Track Daily</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Sync from Wearable</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Target</span>
+              <span class="marker-value-number">&gt;80/100</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Daily composite score from your wearable (Oura, Apple Watch, Whoop, etc.).</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Track</div>
+              <p>Daily accountability for sleep optimization. Trends over time reveal what interventions (supplements, timing, environment) actually work for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 4: Mental Health -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon mental">🧠</div>
+        <div>
+          <h2 class="category-title">Mental Health</h2>
+          <div class="category-count">3 markers • Depression, anxiety, and burnout screening for high-performers</div>
+        </div>
+      </div>
+
+      <!-- PHQ-9 -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">PHQ-9 (Patient Health Questionnaire)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Minimal Depression</span>
+              <span class="marker-value-number">0-4</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">3% (cumulative: 22%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> 9-question depression screen—gold-standard brief tool.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Depression links to ~2× mortality; widely used & validated. Lancet meta-analysis: each 5-point PHQ-9 increase associated with 33% higher mortality.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Exercise, CBT, social connection, circadian alignment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAD-7 -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">GAD-7 (Generalized Anxiety Disorder)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Minimal Anxiety</span>
+              <span class="marker-value-number">0-4</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">1% (cumulative: 23%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> 7-item anxiety severity scale covering worry, restlessness, tension.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Anxiety adds independent risk not captured by depression. Elevated GAD-7 linked to cardiac events and all-cause mortality.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Breathwork, stress management, CBT, meditation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Maslach Burnout Inventory -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Maslach Burnout Inventory GS-9</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+            <span class="marker-category-tag age">Age 45-60</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Low Burnout</span>
+              <span class="marker-value-number">&lt;33rd percentile</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">3.1% (cumulative: 26.1%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Emotional exhaustion, cynicism/depersonalization, efficacy—specifically for ages 45-60.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Peak career burnout window; 45-60 specific. Burnout associates with incident CVD and new-onset diabetes in longitudinal studies.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Workload redesign, recovery scheduling, professional boundary setting</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 5: Social Connection -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon" style="background: #fce7f3;">👥</div>
+        <div>
+          <h2 class="category-title">Social Connection</h2>
+          <div class="category-count">2 markers • Relationships rival smoking and exercise for mortality impact</div>
+        </div>
+      </div>
+
+      <!-- Lubben Social Network Scale-6 -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Lubben Social Network Scale-6</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Good Social Support</span>
+              <span class="marker-value-number">&gt;12</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">3% (cumulative: 29%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Size & frequency of supportive family/friends network.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Social isolation raises mortality ~26%—effect rivalling smoking; quick screen. Meta-analysis found strong social networks reduced mortality HR 0.74.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Active social outreach, regular face-time with close contacts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UCLA Loneliness Scale-11 -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">UCLA Loneliness Scale-11</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Low Loneliness</span>
+              <span class="marker-value-number">&lt;24</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">2% (cumulative: 31%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Perceived loneliness—subjective quality distinct from network size.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Loneliness independently predicts mortality beyond network quantity. UK Biobank: lonely individuals showed 30% higher mortality even after controlling for social isolation.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Volunteer work, group activities, therapy if persistent</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 6: Nutrition Quality -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon" style="background: #dcfce7;">🥗</div>
+        <div>
+          <h2 class="category-title">Nutrition Quality</h2>
+          <div class="category-count">4 markers • Diet patterns and key nutritional biomarkers</div>
+        </div>
+      </div>
+
+      <!-- MEDAS-14 -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">MEDAS-14 (Mediterranean Diet Score)</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag questionnaire">Questionnaire</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Assessed</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Score</span>
+              <span class="marker-value-number not-available">Assessment Needed</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">High Adherence</span>
+              <span class="marker-value-number">&gt;9/14</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">3% (cumulative: 34%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> 14-question adherence to Mediterranean diet—olive oil, fish, veg, nuts.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Best-evidenced cardio-protective diet pattern; brief validated screener. PREDIMED RCT: high-MEDAS reduced CVD events ~30% vs. control.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Increase olive oil, fish, vegetables, nuts; reduce processed foods</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Omega-3 Index -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Omega-3 Index</div>
+            <span class="marker-category-tag universal">Core (Medical)</span>
+            <span class="marker-category-tag" style="background: #fee2e2; color: #991b1b;">Biomarker</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Tested</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Test Recommended</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal</span>
+              <span class="marker-value-number">&gt;8%</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">R² Contribution</span>
+              <span class="marker-value-number">2% (cumulative: 36%)</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> % of EPA + DHA in red-blood-cell membranes—reflects long-term intake.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Chosen</div>
+              <p>Independent CVD risk marker beyond lipids. Index &gt;8% associated with 35% lower sudden cardiac death risk vs. &lt;4%.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Fatty fish 2-3×/week or quality omega-3 supplement</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calories -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Calories</div>
+            <span class="marker-category-tag" style="background: #dcfce7; color: #166534;">Essentials</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Behavioral Data</span>
+          </div>
+          <span class="marker-status not-tested">Track Daily</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Enter in App</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Target</span>
+              <span class="marker-value-number">Personal Goal</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Daily caloric intake tracking for energy balance awareness.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Track</div>
+              <p>Energy balance is fundamental to body composition. Tracking creates awareness even without strict counting—most people underestimate intake by 30-50%.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Supplements -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Supplements</div>
+            <span class="marker-category-tag" style="background: #dcfce7; color: #166534;">Essentials</span>
+            <span class="marker-category-tag" style="background: #fef3c7; color: #92400e;">Behavioral Data</span>
+          </div>
+          <span class="marker-status not-tested">Track Daily</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Adherence</span>
+              <span class="marker-value-number not-available">Track in App</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Target</span>
+              <span class="marker-value-number">&gt;90% adherence</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Daily tracking of supplement protocol adherence.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Track</div>
+              <p>Supplements only work if taken consistently. Tracking creates accountability and reveals patterns (e.g., travel disrupts routine).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DOMAIN 7: Hormonal -->
+    <div class="category-section">
+      <div class="category-header">
+        <div class="category-icon hormones">⚡</div>
+        <div>
+          <h2 class="category-title">Hormonal</h2>
+          <div class="category-count">2 markers • Key hormones for men's vitality and stress response</div>
+        </div>
+      </div>
+
+      <!-- Testosterone -->
+      <div class="marker-card has-data">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Testosterone</div>
+            <span class="marker-category-tag" style="background: #3b82f6; color: white;">Popular</span>
+            <span class="marker-category-tag male">Men Only</span>
+          </div>
+          <span class="marker-status optimal">Excellent</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number your-value">30.5 nmol/L</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Optimal (Men 45-60)</span>
+              <span class="marker-value-number">&gt;20 nmol/L</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Reference Range</span>
+              <span class="marker-value-number">8.6-29 nmol/L</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Primary male androgen—drives muscle, energy, libido, mood.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Popular</div>
+              <p>Most-requested hormone for men. Low T linked to metabolic syndrome, depression, frailty. Your level is excellent for age.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Your Status</div>
+              <p>Outstanding! At 30.5 nmol/L, you're well above optimal and even above the standard reference range. Continue your current lifestyle.</p>
+            </div>
+          </div>
+        </div>
+        <div class="marker-progress">
+          <div class="progress-bar-wrapper">
+            <div class="progress-bar excellent" style="width: 95%;"></div>
+          </div>
+          <div class="progress-markers">
+            <span>8.6</span>
+            <span>Optimal (&gt;20)</span>
+            <span>29+</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cortisol -->
+      <div class="marker-card needs-test">
+        <div class="marker-header">
+          <div class="marker-title-section">
+            <div class="marker-name">Cortisol</div>
+            <span class="marker-category-tag" style="background: #3b82f6; color: white;">Popular</span>
+            <span class="marker-category-tag" style="background: #fee2e2; color: #991b1b;">Biomarker</span>
+          </div>
+          <span class="marker-status not-tested">Not Yet Tested</span>
+        </div>
+        <div class="marker-body">
+          <div class="marker-values">
+            <div class="marker-value-row">
+              <span class="marker-value-label">Your Value</span>
+              <span class="marker-value-number not-available">Test Recommended</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Morning Optimal</span>
+              <span class="marker-value-number">10-20 μg/dL</span>
+            </div>
+            <div class="marker-value-row">
+              <span class="marker-value-label">Evening Target</span>
+              <span class="marker-value-number">&lt;5 μg/dL</span>
+            </div>
+          </div>
+          <div class="marker-description">
+            <p><strong>What it measures:</strong> Primary stress hormone—should peak morning, decline evening.</p>
+            <div class="marker-why">
+              <div class="marker-why-title">Why Popular</div>
+              <p>Chronic elevation signals HPA-axis dysregulation; links to visceral fat, poor sleep, cognitive issues. Diurnal pattern matters as much as absolute level.</p>
+            </div>
+            <div class="marker-why" style="background: #dcfce7; margin-top: 0.5rem;">
+              <div class="marker-why-title" style="color: #166534;">Key Intervention</div>
+              <p>Morning light, stress management, adequate sleep, adaptogenic herbs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary Card -->
+    <div class="glass-card" style="background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);">
+      <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; color: #0f131a;">Your Panel Completion Status</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+        <!-- Currently Have Data -->
+        <div style="background: white; padding: 1.5rem; border-radius: 16px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #166534; display: flex; align-items: center; gap: 0.5rem;">
+            <span>✅</span> Have Data (2 of 24)
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 0.4rem 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between;">
+              <span>HbA1c</span><span style="color: #22c55e; font-weight: 600;">4.9% — Excellent</span>
+            </li>
+            <li style="padding: 0.4rem 0; display: flex; justify-content: space-between;">
+              <span>Testosterone</span><span style="color: #84cc16; font-weight: 600;">30.5 nmol/L — Excellent</span>
+            </li>
+          </ul>
+          <p style="margin-top: 1rem; font-size: 0.85rem; color: #6b7280;">Your tested markers are performing well. Both are in the optimal range for longevity.</p>
+        </div>
+
+        <!-- Priority Actions -->
+        <div style="background: white; padding: 1.5rem; border-radius: 16px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #232d14; display: flex; align-items: center; gap: 0.5rem;">
+            <span>🎯</span> Priority Actions
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.9rem;">
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center;">
+              <span><strong>ApoB Test</strong></span><span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">HIGH PRIORITY</span>
+            </li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center;">
+              <span><strong>Omega-3 Index</strong></span><span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">BIOMARKER</span>
+            </li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center;">
+              <span><strong>Cortisol</strong></span><span style="background: #fef3c7; color: #92400e; padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">BIOMARKER</span>
+            </li>
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center;">
+              <span><strong>Waist-to-Height</strong></span><span style="background: #e0e7ff; color: #3730a3; padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">MEASURE</span>
+            </li>
+            <li style="padding: 0.5rem 0; display: flex; justify-content: space-between; align-items: center;">
+              <span><strong>VO₂ Max</strong></span><span style="background: #dcfce7; color: #166534; padding: 0.25rem 0.5rem; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">WEARABLE</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Panel Overview by Domain -->
+      <div style="margin-top: 1.5rem; background: white; padding: 1.5rem; border-radius: 16px;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; color: #0f131a;">24 Markers Across 7 Domains</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">❤️ Cardiometabolic</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">5 markers • R² 12%</div>
+          </div>
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">💪 Mobility</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">4 markers • R² 10%</div>
+          </div>
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">🌙 Sleep Health</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">4 markers • R² 7%</div>
+          </div>
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">🧠 Mental Health</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">3 markers • R² 7%</div>
+          </div>
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">👥 Social Connection</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">2 markers • R² 5%</div>
+          </div>
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">🥗 Nutrition Quality</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">4 markers • R² 5%</div>
+          </div>
+          <div style="padding: 0.75rem; background: rgba(196, 221, 0, 0.08); border-radius: 8px;">
+            <div style="font-weight: 600; color: #232d14;">⚡ Hormonal</div>
+            <div style="font-size: 0.85rem; color: #6b7280;">2 markers • Popular</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, #181d26, #232d14); border-radius: 16px; color: white;">
+        <p style="margin: 0; font-size: 1rem; line-height: 1.7;">
+          <strong>💡 Why 24 markers?</strong> This evidence-based panel for men aged 45-60 explains ~85% of health variance. It includes 17 Core (Medical) markers, 2 Popular markers (Testosterone, Cortisol), and 5 Essentials (daily tracking). Testing 100+ markers adds cost and confusion without meaningfully improving predictions.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleMobileNav() {
+      document.getElementById('navSidebar').classList.toggle('mobile-open');
+    }
+
+    function checkScreenSize() {
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      if (window.innerWidth <= 1024) {
+        mobileBtn.style.display = 'block';
+      } else {
+        mobileBtn.style.display = 'none';
+        document.getElementById('navSidebar').classList.remove('mobile-open');
+      }
+    }
+
+    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('load', checkScreenSize);
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navSidebar');
+      const btn = document.querySelector('.mobile-menu-btn');
+
+      if (window.innerWidth <= 1024 &&
+          !nav.contains(event.target) &&
+          !btn.contains(event.target) &&
+          nav.classList.contains('mobile-open')) {
+        nav.classList.remove('mobile-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

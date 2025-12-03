@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Longevity Optimization — Vishen Lakhiani | December 2025</title>
+  <meta name="description" content="Science-backed longevity strategies addressing the 9 Hallmarks of Aging with personalized recommendations based on your blood work." />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#c4dd00" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Navigation Sidebar */
+    .nav-sidebar {
+      width: 280px;
+      background: #181d26;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      padding: 2rem 0;
+      color: white;
+      z-index: 1000;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-profile {
+      padding: 0 2rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .nav-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #232d14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border: 3px solid #c4dd00;
+    }
+
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background: rgba(196, 221, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .nav-link.active {
+      background: rgba(196, 221, 0, 0.15);
+      font-weight: 700;
+      border-left: 3px solid #c4dd00;
+      margin-left: -3px;
+    }
+
+    .nav-icon {
+      font-size: 1.5rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 280px;
+      flex: 1;
+      padding: 3rem;
+      max-width: 1400px;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: #4b5563;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(196, 221, 0, 0.15);
+    }
+
+    /* Section Headers */
+    .section-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      color: #232d14;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* Hallmark Grid */
+    .hallmark-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .hallmark-card {
+      background: #fafbff;
+      border-radius: 20px;
+      padding: 2rem;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hallmark-card:hover {
+      border-color: #232d14;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(122, 18, 212, 0.15);
+    }
+
+    .hallmark-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #7a12d4, #9333ea);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .hallmark-card:hover::before {
+      opacity: 1;
+    }
+
+    .hallmark-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .hallmark-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hallmark-description {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .hallmark-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .hallmark-status.addressed {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .hallmark-status.partial {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .hallmark-status.enhance {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    /* Longevity Score */
+    .longevity-score {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      border-radius: 20px;
+      color: white;
+      margin: 2rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 6px solid rgba(255,255,255,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .score-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.9;
+    }
+
+    .score-details h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .score-details p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+
+    /* Empathy Box */
+    .empathy-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid #22c55e;
+    }
+
+    .empathy-box.info {
+      background: linear-gradient(135deg, rgba(196, 221, 0, 0.1) 0%, #e8e0f0 100%);
+      border-left-color: #232d14;
+    }
+
+    .empathy-box.warning {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border-left-color: #f59e0b;
+    }
+
+    .empathy-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f131a;
+    }
+
+    .empathy-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    /* Strategy Section */
+    .strategy-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: #fafbff;
+      border-radius: 16px;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+      align-items: flex-start;
+    }
+
+    .strategy-item:hover {
+      background: rgba(196, 221, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .strategy-number {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #7a12d4, #9333ea);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .strategy-content h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.5rem;
+    }
+
+    .strategy-content p {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #7a12d4, #9333ea);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 1.5rem 0 1.5rem 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 1.8rem;
+      width: 12px;
+      height: 12px;
+      background: #7a12d4;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 2px 8px rgba(122, 18, 212, 0.3);
+    }
+
+    .timeline-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #0f131a;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-description {
+      font-size: 0.95rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .nav-sidebar.mobile-open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+      }
+
+      .mobile-menu-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 999;
+        background: linear-gradient(135deg, #7a12d4, #9333ea);
+        color: white;
+        border: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(122, 18, 212, 0.3);
+      }
+
+      .longevity-score {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+      }
+
+      .hallmark-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="mobile-menu-btn" onclick="toggleMobileNav()" style="display: none;">☰</button>
+
+  <!-- Navigation Sidebar -->
+  <nav class="nav-sidebar" id="navSidebar">
+    <div class="nav-profile">
+      <div class="nav-avatar">🌟</div>
+      <div class="nav-name">Vishen Lakhiani</div>
+      <div class="nav-subtitle">Male, 49 years old</div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="blood-work.html" class="nav-link">
+          <span class="nav-icon">🩸</span>
+          <span>Blood Work</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="key-markers.html" class="nav-link">
+          <span class="nav-icon">🎯</span>
+          <span>Key Markers</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="health-kit.html" class="nav-link">
+          <span class="nav-icon">📱</span>
+          <span>Health Kit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="longevity.html" class="nav-link active">
+          <span class="nav-icon">⏳</span>
+          <span>Longevity</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="supplements.html" class="nav-link">
+          <span class="nav-icon">💊</span>
+          <span>Supplements</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="meal-plan.html" class="nav-link">
+          <span class="nav-icon">🍽️</span>
+          <span>Meal Plan</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">Longevity Optimization</h1>
+      <p class="page-subtitle">
+        The science of living longer and better. Your current stack addresses many of the 9 Hallmarks of Aging—let's see where you stand and how to optimize further.
+      </p>
+    </div>
+
+    <!-- Longevity Score -->
+    <div class="longevity-score">
+      <div class="score-circle">
+        <span class="score-number">82</span>
+        <span class="score-label">Score</span>
+      </div>
+      <div class="score-details">
+        <h3>Your Longevity Readiness Score</h3>
+        <p>Based on your blood markers, supplement stack, and lifestyle indicators, you're addressing 7 of 9 hallmarks of aging effectively. Your metabolic health (HbA1c 4.9%), inflammation control (CRP <5), and hormone optimization (Testosterone 30.5 nmol/L) are exceptional foundations for healthy aging.</p>
+      </div>
+    </div>
+
+    <!-- 9 Hallmarks of Aging -->
+    <div class="glass-card">
+      <span class="section-emoji">🧬</span>
+      <div class="section-eyebrow">The Science of Aging</div>
+      <h2 class="section-title">The 9 Hallmarks of Aging</h2>
+      <p class="section-description">
+        Scientists have identified 9 biological processes that drive aging. Your supplement stack and lifestyle choices can influence each one. Here's how you're doing:
+      </p>
+
+      <div class="hallmark-grid">
+        <!-- Hallmark 1 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🔗</span>
+          <h3 class="hallmark-title">1. Genomic Instability</h3>
+          <p class="hallmark-description">DNA damage accumulates over time. NAC, Spermidine, and your antioxidant stack help protect DNA integrity.</p>
+          <span class="hallmark-status addressed">✓ Well Addressed</span>
+        </div>
+
+        <!-- Hallmark 2 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🧫</span>
+          <h3 class="hallmark-title">2. Telomere Attrition</h3>
+          <p class="hallmark-description">Chromosome end-caps shorten with age. Omega-3s, Vitamin D, and stress reduction support telomere health.</p>
+          <span class="hallmark-status addressed">✓ Well Addressed</span>
+        </div>
+
+        <!-- Hallmark 3 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">⚙️</span>
+          <h3 class="hallmark-title">3. Epigenetic Alterations</h3>
+          <p class="hallmark-description">Gene expression changes with age. B vitamins, NAC, and methylation support (TMG) help maintain epigenetic health.</p>
+          <span class="hallmark-status addressed">✓ Well Addressed</span>
+        </div>
+
+        <!-- Hallmark 4 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🔄</span>
+          <h3 class="hallmark-title">4. Loss of Proteostasis</h3>
+          <p class="hallmark-description">Protein quality control declines. Spermidine activates autophagy, your body's recycling system. CoQ10 and Creatine support protein synthesis.</p>
+          <span class="hallmark-status addressed">✓ Well Addressed</span>
+        </div>
+
+        <!-- Hallmark 5 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">📊</span>
+          <h3 class="hallmark-title">5. Deregulated Nutrient Sensing</h3>
+          <p class="hallmark-description">Metabolic pathways become dysregulated. Your exceptional HbA1c (4.9%) shows Berberine is working beautifully here.</p>
+          <span class="hallmark-status addressed">✓ Excellent</span>
+        </div>
+
+        <!-- Hallmark 6 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🔋</span>
+          <h3 class="hallmark-title">6. Mitochondrial Dysfunction</h3>
+          <p class="hallmark-description">Energy powerhouses decline. CoQ10, PQQ, L-Carnitine, and Creatine directly support mitochondrial function.</p>
+          <span class="hallmark-status addressed">✓ Strong Stack</span>
+        </div>
+
+        <!-- Hallmark 7 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🧟</span>
+          <h3 class="hallmark-title">7. Cellular Senescence</h3>
+          <p class="hallmark-description">Zombie cells accumulate. Consider adding Fisetin (a natural senolytic) to clear senescent cells periodically.</p>
+          <span class="hallmark-status partial">⚠️ Can Enhance</span>
+        </div>
+
+        <!-- Hallmark 8 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🩹</span>
+          <h3 class="hallmark-title">8. Stem Cell Exhaustion</h3>
+          <p class="hallmark-description">Regenerative capacity declines. Exercise, fasting protocols, and your current stack support stem cell function.</p>
+          <span class="hallmark-status enhance">→ Optimize More</span>
+        </div>
+
+        <!-- Hallmark 9 -->
+        <div class="hallmark-card">
+          <span class="hallmark-icon">💬</span>
+          <h3 class="hallmark-title">9. Altered Intercellular Communication</h3>
+          <p class="hallmark-description">Cell signaling becomes impaired. Your anti-inflammatory stack (Curcumin, Boswellia, Omega-3) keeps communication healthy.</p>
+          <span class="hallmark-status addressed">✓ Well Addressed</span>
+        </div>
+      </div>
+
+      <div class="empathy-box info">
+        <h3 class="empathy-title">What this means for you 💜</h3>
+        <p class="empathy-text">
+          You're already addressing 7 of the 9 hallmarks effectively through your supplement stack and lifestyle. This is exceptional for someone who isn't specifically following a longevity protocol. The two areas with room for enhancement—cellular senescence and stem cell exhaustion—can be addressed with periodic senolytic protocols (Fisetin) and optimized fasting/exercise strategies.
+        </p>
+      </div>
+    </div>
+
+    <!-- NAD+ Optimization -->
+    <div class="glass-card">
+      <span class="section-emoji">⚡</span>
+      <div class="section-eyebrow">The Energy Molecule</div>
+      <h2 class="section-title">NAD+ Optimization</h2>
+      <p class="section-description">
+        NAD+ (Nicotinamide Adenine Dinucleotide) is the master molecule of cellular energy. It declines ~50% by age 50 and is linked to virtually every hallmark of aging.
+      </p>
+
+      <div class="empathy-box warning">
+        <h3 class="empathy-title">Your Current NAD+ Support 🔋</h3>
+        <p class="empathy-text">
+          You have foundational NAD+ support through your current stack:<br/><br/>
+          <strong>Direct supporters:</strong> B vitamins (precursors), NAC (preserves NAD+), Berberine (activates sirtuins that use NAD+)<br/><br/>
+          <strong>Consider adding:</strong> NMN (Nicotinamide Mononucleotide) 500-1000mg or NR (Nicotinamide Riboside) 300-500mg for direct NAD+ precursor support. These are the most efficient ways to boost cellular NAD+ levels.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4 class="timeline-title">Ages 20-30</h4>
+          <p class="timeline-description">Peak NAD+ levels. Cells have abundant energy for repair and regeneration.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="timeline-title">Ages 40-50</h4>
+          <p class="timeline-description">NAD+ declines ~50%. Energy, recovery, and cellular repair begin to slow.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="timeline-title">Your Position (49)</h4>
+          <p class="timeline-description">Critical window for intervention. Supporting NAD+ now can significantly impact healthspan trajectory.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 class="timeline-title">Ages 60+</h4>
+          <p class="timeline-description">Without intervention, NAD+ drops to 10-25% of youthful levels. Supplementation becomes even more important.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Longevity Strategies -->
+    <div class="glass-card">
+      <span class="section-emoji">🎯</span>
+      <div class="section-eyebrow">Action Plan</div>
+      <h2 class="section-title">Your Top 5 Longevity Priorities</h2>
+      <p class="section-description">
+        Based on your blood work and current stack, these are the highest-impact optimizations for healthy aging:
+      </p>
+
+      <div class="strategy-item">
+        <div class="strategy-number">1</div>
+        <div class="strategy-content">
+          <h4>Optimize Cardiovascular Markers</h4>
+          <p>Your LDL at 171 mg/dL is the biggest longevity opportunity. Increasing Omega-3 to 3-4g and Bergamot to 1000mg can bring this down. Consider adding Niacin (vitamin B3) for HDL support.</p>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-number">2</div>
+        <div class="strategy-content">
+          <h4>Consider NAD+ Precursors</h4>
+          <p>Adding NMN (500-1000mg) or NR (300-500mg) would directly address age-related NAD+ decline. This supports energy, DNA repair, and sirtuin activation.</p>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-number">3</div>
+        <div class="strategy-content">
+          <h4>Periodic Senolytic Protocol</h4>
+          <p>Consider quarterly Fisetin pulses (1000-2000mg for 2-3 consecutive days) to clear senescent "zombie" cells that accelerate aging.</p>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-number">4</div>
+        <div class="strategy-content">
+          <h4>Maintain Metabolic Excellence</h4>
+          <p>Your HbA1c of 4.9% is exceptional. Continue Berberine and consider time-restricted eating (16:8) to further optimize insulin sensitivity and autophagy.</p>
+        </div>
+      </div>
+
+      <div class="strategy-item">
+        <div class="strategy-number">5</div>
+        <div class="strategy-content">
+          <h4>Free Up Testosterone via SHBG</h4>
+          <p>Your total testosterone is excellent (30.5 nmol/L), but elevated SHBG (66.9) reduces bioavailability. Increase Boron to 6mg and add Nettle Root (300mg) to lower SHBG and maximize free testosterone.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lifestyle Factors -->
+    <div class="glass-card">
+      <span class="section-emoji">🌱</span>
+      <div class="section-eyebrow">Beyond Supplements</div>
+      <h2 class="section-title">Lifestyle Multipliers</h2>
+      <p class="section-description">
+        Supplements are powerful, but these lifestyle factors amplify their effects and directly influence longevity:
+      </p>
+
+      <div class="hallmark-grid">
+        <div class="hallmark-card">
+          <span class="hallmark-icon">😴</span>
+          <h3 class="hallmark-title">Sleep Quality</h3>
+          <p class="hallmark-description">Your Ashwagandha, Magnesium (Glycinate + Taurate), and GABA stack supports sleep. Aim for 7-8 hours in a cool, dark room. Sleep is when your body repairs.</p>
+          <span class="hallmark-status addressed">✓ Stack Supports</span>
+        </div>
+
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🏋️</span>
+          <h3 class="hallmark-title">Exercise</h3>
+          <p class="hallmark-description">Both resistance training and zone 2 cardio are essential. Resistance builds muscle (longevity organ), cardio supports mitochondria and cardiovascular health.</p>
+          <span class="hallmark-status enhance">→ Personalize</span>
+        </div>
+
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🕐</span>
+          <h3 class="hallmark-title">Time-Restricted Eating</h3>
+          <p class="hallmark-description">16:8 fasting activates autophagy, supports metabolic health, and complements your Berberine protocol. Consider finishing dinner by 8pm.</p>
+          <span class="hallmark-status partial">⚠️ Consider</span>
+        </div>
+
+        <div class="hallmark-card">
+          <span class="hallmark-icon">🧘</span>
+          <h3 class="hallmark-title">Stress Management</h3>
+          <p class="hallmark-description">Chronic stress accelerates aging via cortisol. Your Ashwagandha and L-Theanine help. Meditation amplifies these effects.</p>
+          <span class="hallmark-status addressed">✓ Stack Supports</span>
+        </div>
+
+        <div class="hallmark-card">
+          <span class="hallmark-icon">☀️</span>
+          <h3 class="hallmark-title">Sun & Heat Exposure</h3>
+          <p class="hallmark-description">Morning sunlight for circadian rhythm, sauna for heat shock proteins (similar to exercise stress). Both support longevity pathways.</p>
+          <span class="hallmark-status enhance">→ Optimize</span>
+        </div>
+
+        <div class="hallmark-card">
+          <span class="hallmark-icon">❄️</span>
+          <h3 class="hallmark-title">Cold Exposure</h3>
+          <p class="hallmark-description">Cold showers or ice baths activate brown fat, improve insulin sensitivity, and boost mood via norepinephrine. Start with 30 seconds of cold at the end of showers.</p>
+          <span class="hallmark-status enhance">→ Consider</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="glass-card" style="background: linear-gradient(135deg, rgba(196, 221, 0, 0.1) 0%, #e8e0f0 100%);">
+      <h2 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 1.5rem; color: #0f131a;">Your Longevity Summary</h2>
+      <p style="font-size: 1.125rem; line-height: 1.8; color: #374151; margin-bottom: 1.5rem;">
+        At 49, you're in an exceptional position. Your blood work shows metabolic excellence, controlled inflammation, and strong hormone levels. Your supplement stack addresses the majority of aging hallmarks. The optimizations we've outlined—cardiovascular support, NAD+ precursors, and periodic senolytics—aren't about fixing problems, they're about taking an already sophisticated system and preparing it for the decades ahead.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; background: white; padding: 2rem; border-radius: 16px;">
+        <div style="text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #22c55e;">7/9</div>
+          <div style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Hallmarks Addressed</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #232d14;">82</div>
+          <div style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Longevity Score</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 2.5rem; font-weight: 800; color: #3b82f6;">3</div>
+          <div style="font-size: 0.875rem; color: #6b7280; margin-top: 0.5rem;">Key Additions</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function toggleMobileNav() {
+      document.getElementById('navSidebar').classList.toggle('mobile-open');
+    }
+
+    function checkScreenSize() {
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      if (window.innerWidth <= 1024) {
+        mobileBtn.style.display = 'block';
+      } else {
+        mobileBtn.style.display = 'none';
+        document.getElementById('navSidebar').classList.remove('mobile-open');
+      }
+    }
+
+    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('load', checkScreenSize);
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navSidebar');
+      const btn = document.querySelector('.mobile-menu-btn');
+
+      if (window.innerWidth <= 1024 &&
+          !nav.contains(event.target) &&
+          !btn.contains(event.target) &&
+          nav.classList.contains('mobile-open')) {
+        nav.classList.remove('mobile-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Supplement Stack — Vishen Lakhiani | December 2025</title>
+  <meta name="description" content="Complete supplement stack analysis with daily checklist, timing recommendations, and optimization suggestions based on blood work." />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#c4dd00" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Navigation Sidebar */
+    .nav-sidebar {
+      width: 280px;
+      background: #181d26;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      padding: 2rem 0;
+      color: white;
+      z-index: 1000;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-profile {
+      padding: 0 2rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .nav-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #232d14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border: 3px solid #c4dd00;
+    }
+
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background: rgba(196, 221, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .nav-link.active {
+      background: rgba(196, 221, 0, 0.15);
+      font-weight: 700;
+      border-left: 3px solid #c4dd00;
+      margin-left: -3px;
+    }
+
+    .nav-icon {
+      font-size: 1.5rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 280px;
+      flex: 1;
+      padding: 3rem;
+      max-width: 1400px;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: #4b5563;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(196, 221, 0, 0.12);
+    }
+
+    /* Section Headers */
+    .section-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.75rem;
+      color: #232d14;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    /* Stats Row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .stat-box {
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #232d14;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+    }
+
+    /* Checklist */
+    .checklist-progress {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #7a12d4 0%, #9333ea 100%);
+      border-radius: 16px;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .progress-ring {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .progress-ring svg {
+      transform: rotate(-90deg);
+    }
+
+    .progress-ring-bg {
+      fill: none;
+      stroke: rgba(255,255,255,0.2);
+      stroke-width: 8;
+    }
+
+    .progress-ring-fill {
+      fill: none;
+      stroke: white;
+      stroke-width: 8;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .progress-info h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-info p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Supplement Item */
+    .supplement-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: #fafbff;
+      border-radius: 14px;
+      margin: 0.75rem 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .supplement-item:hover {
+      background: #f5f0fa;
+      transform: translateX(4px);
+    }
+
+    .supplement-item.checked {
+      background: #f0fdf4;
+      border-color: #22c55e;
+    }
+
+    .supplement-checkbox {
+      width: 28px;
+      height: 28px;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .supplement-item.checked .supplement-checkbox {
+      background: #22c55e;
+      border-color: #22c55e;
+      color: white;
+    }
+
+    .supplement-checkbox::after {
+      content: '✓';
+      opacity: 0;
+      font-weight: 700;
+      color: white;
+      transition: opacity 0.2s ease;
+    }
+
+    .supplement-item.checked .supplement-checkbox::after {
+      opacity: 1;
+    }
+
+    .supplement-info {
+      flex: 1;
+    }
+
+    .supplement-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0f131a;
+      margin-bottom: 0.25rem;
+    }
+
+    .supplement-dosage {
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+
+    .supplement-category {
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      flex-shrink: 0;
+    }
+
+    .supplement-category.energy {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .supplement-category.longevity {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .supplement-category.antioxidant {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .supplement-category.sleep {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .supplement-category.cardio {
+      background: #fce7f3;
+      color: #9d174d;
+    }
+
+    .supplement-category.injury {
+      background: #f5f0fa;
+      color: #232d14;
+    }
+
+    .supplement-category.stress {
+      background: #ecfccb;
+      color: #3f6212;
+    }
+
+    /* Time Block */
+    .time-block {
+      margin: 2rem 0;
+    }
+
+    .time-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f3f4f6;
+    }
+
+    .time-icon {
+      font-size: 1.75rem;
+    }
+
+    .time-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f131a;
+    }
+
+    .time-subtitle {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-left: auto;
+    }
+
+    /* Optimization Card */
+    .optimization-card {
+      background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-left: 4px solid #22c55e;
+    }
+
+    .optimization-card.warning {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border-left-color: #f59e0b;
+    }
+
+    .optimization-card.add {
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-left-color: #232d14;
+    }
+
+    .optimization-card.remove {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border-left-color: #ef4444;
+    }
+
+    .optimization-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #0f131a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .optimization-text {
+      font-size: 0.95rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    /* Empathy Box */
+    .empathy-box {
+      background: linear-gradient(135deg, #f5f0fa 0%, #e8e0f0 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-left: 4px solid #7a12d4;
+    }
+
+    .empathy-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f131a;
+    }
+
+    .empathy-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .nav-sidebar.mobile-open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+      }
+
+      .mobile-menu-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 999;
+        background: linear-gradient(135deg, #7a12d4, #9333ea);
+        color: white;
+        border: none;
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(196, 221, 0, 0.3);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+      }
+
+      .checklist-progress {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="mobile-menu-btn" onclick="toggleMobileNav()" style="display: none;">☰</button>
+
+  <!-- Navigation Sidebar -->
+  <nav class="nav-sidebar" id="navSidebar">
+    <div class="nav-profile">
+      <div class="nav-avatar">🌟</div>
+      <div class="nav-name">Vishen Lakhiani</div>
+      <div class="nav-subtitle">Male, 49 years old</div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="blood-work.html" class="nav-link">
+          <span class="nav-icon">🩸</span>
+          <span>Blood Work</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="key-markers.html" class="nav-link">
+          <span class="nav-icon">🎯</span>
+          <span>Key Markers</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="health-kit.html" class="nav-link">
+          <span class="nav-icon">📱</span>
+          <span>Health Kit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="longevity.html" class="nav-link">
+          <span class="nav-icon">⏳</span>
+          <span>Longevity</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="supplements.html" class="nav-link active">
+          <span class="nav-icon">💊</span>
+          <span>Supplements</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="meal-plan.html" class="nav-link">
+          <span class="nav-icon">🍽️</span>
+          <span>Meal Plan</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">Your Supplement Stack</h1>
+      <p class="page-subtitle">
+        30 supplements optimized for longevity, energy, and recovery. Track your daily intake and see personalized recommendations based on your blood work.
+      </p>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div class="checklist-progress">
+      <div class="progress-ring">
+        <svg width="80" height="80">
+          <circle class="progress-ring-bg" cx="40" cy="40" r="32"></circle>
+          <circle class="progress-ring-fill" cx="40" cy="40" r="32"
+                  stroke-dasharray="201"
+                  stroke-dashoffset="201"
+                  id="progressRing"></circle>
+        </svg>
+        <span class="progress-text" id="progressText">0%</span>
+      </div>
+      <div class="progress-info">
+        <h3>Daily Progress</h3>
+        <p><span id="checkedCount">0</span> of 30 supplements taken today</p>
+      </div>
+      <button onclick="resetChecklist()" style="
+        background: rgba(255,255,255,0.2);
+        border: none;
+        padding: 0.75rem 1.25rem;
+        border-radius: 100px;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        margin-left: auto;
+        transition: background 0.3s ease;
+      ">Reset Today</button>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-number">30</div>
+        <div class="stat-label">Total Supplements</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">~478mg</div>
+        <div class="stat-label">Elemental Magnesium</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Optimizations</div>
+      </div>
+    </div>
+
+    <!-- Optimizations -->
+    <div class="glass-card">
+      <span class="section-emoji">🎯</span>
+      <div class="section-eyebrow">Based On Your Blood Work</div>
+      <h2 class="section-title">Recommended Optimizations</h2>
+      <p class="section-description">
+        These changes will address the specific markers that need attention in your October 2025 blood work.
+      </p>
+
+      <div class="optimization-card warning">
+        <h4 class="optimization-title">⬆️ Increase Omega-3 to 3-4g daily</h4>
+        <p class="optimization-text">Currently at 1g. Higher doses support LDL reduction and HDL improvement. Look for high EPA content (2:1 EPA:DHA ratio ideal for cardiovascular support).</p>
+      </div>
+
+      <div class="optimization-card warning">
+        <h4 class="optimization-title">⬆️ Increase Bergamot to 1000mg daily</h4>
+        <p class="optimization-text">Currently at 500mg. Doubling this supports LDL metabolism and may help lower your elevated cholesterol without statins.</p>
+      </div>
+
+      <div class="optimization-card add">
+        <h4 class="optimization-title">➕ Add Zinc Picolinate 15-30mg</h4>
+        <p class="optimization-text">Your zinc is low-normal at 79.5 μg/dL. Zinc supports testosterone production, immune function, and acts as a natural aromatase inhibitor.</p>
+      </div>
+
+      <div class="optimization-card add">
+        <h4 class="optimization-title">➕ Add Stinging Nettle Root 300mg</h4>
+        <p class="optimization-text">Works synergistically with Boron (increase from 3mg to 6mg) to lower SHBG and free up more testosterone.</p>
+      </div>
+
+      <div class="optimization-card remove">
+        <h4 class="optimization-title">⬇️ Consider reducing Magnesium Taurate</h4>
+        <p class="optimization-text">You have 3 forms of magnesium totaling ~478mg elemental. Taurate overlaps with Glycinate for sleep. Consider simplifying to Glycinate + Threonate only.</p>
+      </div>
+
+      <div class="optimization-card remove">
+        <h4 class="optimization-title">⬇️ Reduce Ashwagandha to 600mg</h4>
+        <p class="optimization-text">1500mg is above typical therapeutic range (300-600mg). Higher doses may cause thyroid changes in some people. Consider reducing and monitoring effects.</p>
+      </div>
+    </div>
+
+    <!-- Morning Supplements -->
+    <div class="glass-card">
+      <div class="time-block">
+        <div class="time-header">
+          <span class="time-icon">🌅</span>
+          <span class="time-title">Morning (with breakfast)</span>
+          <span class="time-subtitle">~15 supplements</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="nac">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">NAC (N-Acetyl Cysteine)</div>
+            <div class="supplement-dosage">600mg daily</div>
+          </div>
+          <span class="supplement-category antioxidant">Antioxidant</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="carnitine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">L-Carnitine</div>
+            <div class="supplement-dosage">1500mg daily</div>
+          </div>
+          <span class="supplement-category energy">Energy</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="coq10">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">CoQ10</div>
+            <div class="supplement-dosage">200mg daily</div>
+          </div>
+          <span class="supplement-category energy">Energy</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="pqq">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">PQQ</div>
+            <div class="supplement-dosage">20mg daily</div>
+          </div>
+          <span class="supplement-category energy">Energy</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="berberine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Berberine</div>
+            <div class="supplement-dosage">500mg daily</div>
+          </div>
+          <span class="supplement-category energy">Metabolic</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="bergamot">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Bergamot</div>
+            <div class="supplement-dosage">500mg → 1000mg daily</div>
+          </div>
+          <span class="supplement-category cardio">Cardio</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="omega3">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Omega-3</div>
+            <div class="supplement-dosage">1g → 3-4g daily</div>
+          </div>
+          <span class="supplement-category cardio">Cardio</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="d3k2">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Vitamin D3 + K2</div>
+            <div class="supplement-dosage">Every 2 days</div>
+          </div>
+          <span class="supplement-category longevity">Longevity</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="spermidine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Spermidine</div>
+            <div class="supplement-dosage">8mg daily</div>
+          </div>
+          <span class="supplement-category longevity">Longevity</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="ergothioneine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">L-Ergothioneine</div>
+            <div class="supplement-dosage">5mg daily</div>
+          </div>
+          <span class="supplement-category longevity">Longevity</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="creatine-am">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Creatine (AM dose)</div>
+            <div class="supplement-dosage">3g (of 5g total)</div>
+          </div>
+          <span class="supplement-category energy">Energy</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="curcumin">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Curcumin Phytosome</div>
+            <div class="supplement-dosage">500mg daily</div>
+          </div>
+          <span class="supplement-category injury">Inflammation</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="boswellia">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Boswellia Serrata</div>
+            <div class="supplement-dosage">200mg daily</div>
+          </div>
+          <span class="supplement-category injury">Inflammation</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="boron">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Boron</div>
+            <div class="supplement-dosage">3mg → 6mg daily</div>
+          </div>
+          <span class="supplement-category injury">Hormones</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="tmg">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">TMG (Trimethylglycine)</div>
+            <div class="supplement-dosage">500mg daily</div>
+          </div>
+          <span class="supplement-category longevity">Methylation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Midday Supplements -->
+    <div class="glass-card">
+      <div class="time-block">
+        <div class="time-header">
+          <span class="time-icon">☀️</span>
+          <span class="time-title">Midday (with lunch)</span>
+          <span class="time-subtitle">~8 supplements</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="lutein">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Lutein</div>
+            <div class="supplement-dosage">10-20mg daily</div>
+          </div>
+          <span class="supplement-category antioxidant">Eye Health</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="zeaxanthin">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Zeaxanthin</div>
+            <div class="supplement-dosage">2mg daily</div>
+          </div>
+          <span class="supplement-category antioxidant">Eye Health</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="collagen-ii">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Collagen Type II (Undenatured)</div>
+            <div class="supplement-dosage">40mg daily</div>
+          </div>
+          <span class="supplement-category injury">Joint</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="collagen-1-3">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Collagen Type I & III</div>
+            <div class="supplement-dosage">10-20g daily (5x 1200mg)</div>
+          </div>
+          <span class="supplement-category injury">Joint/Skin</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="msm">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">MSM</div>
+            <div class="supplement-dosage">1000mg daily</div>
+          </div>
+          <span class="supplement-category injury">Joint</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="mag-threonate">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Magnesium Threonate</div>
+            <div class="supplement-dosage">2000mg daily</div>
+          </div>
+          <span class="supplement-category longevity">Cognitive</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="creatine-pm">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Creatine (PM dose)</div>
+            <div class="supplement-dosage">2g (of 5g total)</div>
+          </div>
+          <span class="supplement-category energy">Energy</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="green-tea">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Green Tea Extract</div>
+            <div class="supplement-dosage">1000mg on gym days</div>
+          </div>
+          <span class="supplement-category cardio">Metabolic</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evening Supplements -->
+    <div class="glass-card">
+      <div class="time-block">
+        <div class="time-header">
+          <span class="time-icon">🌙</span>
+          <span class="time-title">Evening (before bed)</span>
+          <span class="time-subtitle">~7 supplements</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="glycine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Glycine</div>
+            <div class="supplement-dosage">3g daily</div>
+          </div>
+          <span class="supplement-category sleep">Sleep</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="mag-glycinate">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Magnesium Glycinate</div>
+            <div class="supplement-dosage">2000mg daily</div>
+          </div>
+          <span class="supplement-category sleep">Sleep</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="mag-taurate">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Magnesium Taurate</div>
+            <div class="supplement-dosage">600mg daily</div>
+          </div>
+          <span class="supplement-category sleep">Sleep</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="ashwagandha">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">Ashwagandha KSM-66</div>
+            <div class="supplement-dosage">1500mg → 600mg daily</div>
+          </div>
+          <span class="supplement-category stress">Stress</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="gaba">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">GABA</div>
+            <div class="supplement-dosage">500mg → 100-250mg daily</div>
+          </div>
+          <span class="supplement-category stress">Stress</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="theanine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">L-Theanine</div>
+            <div class="supplement-dosage">100-200mg as needed</div>
+          </div>
+          <span class="supplement-category stress">Stress</span>
+        </div>
+
+        <div class="supplement-item" onclick="toggleSupplement(this)" data-id="tyrosine">
+          <div class="supplement-checkbox"></div>
+          <div class="supplement-info">
+            <div class="supplement-name">L-Tyrosine</div>
+            <div class="supplement-dosage">500mg on gym days</div>
+          </div>
+          <span class="supplement-category energy">Focus</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="empathy-box">
+      <h3 class="empathy-title">Your Stack Philosophy 💜</h3>
+      <p class="empathy-text">
+        Your 30-supplement stack is comprehensive and well-thought-out. It covers all major longevity pathways: mitochondrial support (CoQ10, PQQ, L-Carnitine), autophagy activation (Spermidine), methylation (TMG, B vitamins via diet), inflammation control (Curcumin, Boswellia, Omega-3), sleep optimization (triple magnesium, Glycine, Ashwagandha), and injury recovery (Collagen I/II/III, MSM, Boswellia).<br/><br/>
+
+        The optimizations we've suggested aren't about adding more—they're about fine-tuning doses and addressing specific blood markers. Your LDL and SHBG are the only areas needing attention, and both can be addressed by adjusting existing supplements rather than adding many new ones.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    // Load saved state from localStorage
+    function loadChecklistState() {
+      const today = new Date().toDateString();
+      const savedData = localStorage.getItem('supplementChecklist');
+
+      if (savedData) {
+        const data = JSON.parse(savedData);
+        // Reset if it's a new day
+        if (data.date !== today) {
+          localStorage.setItem('supplementChecklist', JSON.stringify({
+            date: today,
+            checked: []
+          }));
+          return [];
+        }
+        return data.checked || [];
+      }
+
+      localStorage.setItem('supplementChecklist', JSON.stringify({
+        date: today,
+        checked: []
+      }));
+      return [];
+    }
+
+    // Save state to localStorage
+    function saveChecklistState(checked) {
+      const today = new Date().toDateString();
+      localStorage.setItem('supplementChecklist', JSON.stringify({
+        date: today,
+        checked: checked
+      }));
+    }
+
+    // Toggle supplement checked state
+    function toggleSupplement(element) {
+      const id = element.dataset.id;
+      const isChecked = element.classList.toggle('checked');
+
+      let checked = loadChecklistState();
+
+      if (isChecked) {
+        if (!checked.includes(id)) {
+          checked.push(id);
+        }
+      } else {
+        checked = checked.filter(item => item !== id);
+      }
+
+      saveChecklistState(checked);
+      updateProgress();
+    }
+
+    // Update progress display
+    function updateProgress() {
+      const total = document.querySelectorAll('.supplement-item').length;
+      const checked = document.querySelectorAll('.supplement-item.checked').length;
+      const percentage = Math.round((checked / total) * 100);
+
+      // Update text
+      document.getElementById('progressText').textContent = percentage + '%';
+      document.getElementById('checkedCount').textContent = checked;
+
+      // Update ring (circumference = 2 * PI * 32 = ~201)
+      const circumference = 201;
+      const offset = circumference - (percentage / 100) * circumference;
+      document.getElementById('progressRing').style.strokeDashoffset = offset;
+    }
+
+    // Reset checklist
+    function resetChecklist() {
+      const today = new Date().toDateString();
+      localStorage.setItem('supplementChecklist', JSON.stringify({
+        date: today,
+        checked: []
+      }));
+
+      document.querySelectorAll('.supplement-item').forEach(item => {
+        item.classList.remove('checked');
+      });
+
+      updateProgress();
+    }
+
+    // Initialize on page load
+    function initChecklist() {
+      const checked = loadChecklistState();
+
+      document.querySelectorAll('.supplement-item').forEach(item => {
+        if (checked.includes(item.dataset.id)) {
+          item.classList.add('checked');
+        }
+      });
+
+      updateProgress();
+    }
+
+    // Mobile Navigation
+    function toggleMobileNav() {
+      document.getElementById('navSidebar').classList.toggle('mobile-open');
+    }
+
+    function checkScreenSize() {
+      const mobileBtn = document.querySelector('.mobile-menu-btn');
+      if (window.innerWidth <= 1024) {
+        mobileBtn.style.display = 'block';
+      } else {
+        mobileBtn.style.display = 'none';
+        document.getElementById('navSidebar').classList.remove('mobile-open');
+      }
+    }
+
+    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('load', () => {
+      checkScreenSize();
+      initChecklist();
+    });
+
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('navSidebar');
+      const btn = document.querySelector('.mobile-menu-btn');
+
+      if (window.innerWidth <= 1024 &&
+          !nav.contains(event.target) &&
+          !btn.contains(event.target) &&
+          nav.classList.contains('mobile-open')) {
+        nav.classList.remove('mobile-open');
+      }
+    });
+  </script>
+
+</body>
+</html>

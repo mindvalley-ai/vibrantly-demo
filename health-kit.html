@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Health Kit Import — Vishen Lakhiani | Vibrantly</title>
+  <meta name="description" content="Import and analyze your Apple Health Kit data for comprehensive health tracking and insights." />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#c4dd00" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../mindvalley-core.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      color: #1A1A1A;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Navigation Sidebar */
+    .nav-sidebar {
+      width: 280px;
+      background: #181d26;
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      padding: 2rem 0;
+      color: white;
+      z-index: 1000;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-profile {
+      padding: 0 2rem 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      margin-bottom: 2rem;
+    }
+
+    .nav-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #232d14;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border: 3px solid #c4dd00;
+    }
+
+    .nav-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .nav-subtitle {
+      font-size: 0.875rem;
+      opacity: 0.9;
+    }
+
+    .nav-menu {
+      list-style: none;
+      padding: 0 1rem;
+    }
+
+    .nav-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.875rem 1rem;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      background: rgba(196, 221, 0, 0.1);
+      transform: translateX(4px);
+    }
+
+    .nav-link.active {
+      background: rgba(196, 221, 0, 0.15);
+      font-weight: 700;
+      border-left: 3px solid #c4dd00;
+      margin-left: -3px;
+    }
+
+    .nav-icon {
+      font-size: 1.5rem;
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      margin-left: 280px;
+      flex: 1;
+      padding: 3rem;
+      max-width: 1400px;
+    }
+
+    /* Page Header */
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0f131a;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .page-subtitle {
+      font-size: 1.25rem;
+      color: #4b5563;
+      line-height: 1.7;
+      max-width: 700px;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(196, 221, 0, 0.15);
+    }
+
+    /* Upload Area */
+    .upload-area {
+      border: 3px dashed #c4dd00;
+      border-radius: 20px;
+      padding: 4rem 2rem;
+      text-align: center;
+      background: rgba(196, 221, 0, 0.05);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .upload-area:hover {
+      background: rgba(196, 221, 0, 0.1);
+      border-color: #84cc16;
+    }
+
+    .upload-area.dragover {
+      background: rgba(196, 221, 0, 0.15);
+      border-color: #84cc16;
+      transform: scale(1.02);
+    }
+
+    .upload-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .upload-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #232d14;
+      margin-bottom: 0.75rem;
+    }
+
+    .upload-subtitle {
+      font-size: 1rem;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    .upload-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: #c4dd00;
+      color: #181d26;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .upload-btn:hover {
+      background: #84cc16;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(196, 221, 0, 0.3);
+    }
+
+    .upload-input {
+      display: none;
+    }
+
+    /* Instructions */
+    .instructions {
+      background: rgba(196, 221, 0, 0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .instructions-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #232d14;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .instructions ol {
+      padding-left: 1.5rem;
+      color: #4b5563;
+      line-height: 1.8;
+    }
+
+    .instructions li {
+      margin-bottom: 0.5rem;
+    }
+
+    .instructions code {
+      background: rgba(24, 29, 38, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      display: none;
+      margin-top: 2rem;
+    }
+
+    .progress-container.visible {
+      display: block;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    .progress-bar-wrapper {
+      height: 12px;
+      background: #e5e7eb;
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #84cc16, #c4dd00);
+      border-radius: 100px;
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    /* Data Display */
+    .data-section {
+      display: none;
+    }
+
+    .data-section.visible {
+      display: block;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .data-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 2px solid #f3f4f6;
+      transition: all 0.3s ease;
+    }
+
+    .data-card:hover {
+      border-color: #c4dd00;
+      box-shadow: 0 4px 12px rgba(196, 221, 0, 0.15);
+    }
+
+    .data-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .data-card-icon {
+      font-size: 2rem;
+      width: 48px;
+      height: 48px;
+      background: rgba(196, 221, 0, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .data-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f131a;
+    }
+
+    .data-card-subtitle {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    .data-card-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #232d14;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .data-card-unit {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+
+    .data-card-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .data-card-trend.up {
+      background: rgba(196, 221, 0, 0.2);
+      color: #232d14;
+    }
+
+    .data-card-trend.down {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .data-card-trend.neutral {
+      background: #f3f4f6;
+      color: #6b7280;
+    }
+
+    /* Summary Section */
+    .summary-banner {
+      background: linear-gradient(135deg, #181d26 0%, #232d14 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .summary-item {
+      text-align: center;
+    }
+
+    .summary-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #c4dd00;
+      line-height: 1;
+    }
+
+    .summary-label {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .nav-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .nav-sidebar.mobile-open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+      }
+
+      .mobile-menu-btn {
+        display: block !important;
+      }
+    }
+
+    .mobile-menu-btn {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 999;
+      background: #181d26;
+      color: #c4dd00;
+      border: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(24, 29, 38, 0.3);
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2rem;
+      }
+
+      .glass-card {
+        padding: 1.5rem;
+      }
+
+      .upload-area {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .data-table th {
+      font-weight: 600;
+      color: #6b7280;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .data-table td {
+      font-size: 0.95rem;
+    }
+
+    .data-table tr:hover {
+      background: rgba(196, 221, 0, 0.05);
+    }
+
+    /* Tabs */
+    .data-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .data-tab {
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      background: #e5e7eb;
+      color: #4b5563;
+      transition: all 0.3s ease;
+    }
+
+    .data-tab:hover {
+      background: rgba(196, 221, 0, 0.2);
+      color: #232d14;
+    }
+
+    .data-tab.active {
+      background: #c4dd00;
+      color: #181d26;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+
+  <!-- Navigation Sidebar -->
+  <nav class="nav-sidebar" id="navSidebar">
+    <div class="nav-profile">
+      <div class="nav-avatar">🌟</div>
+      <div class="nav-name">Vishen Lakhiani</div>
+      <div class="nav-subtitle">Male, 49 years old</div>
+    </div>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">
+          <span class="nav-icon">🏠</span>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="blood-work.html" class="nav-link">
+          <span class="nav-icon">🩸</span>
+          <span>Blood Work</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="key-markers.html" class="nav-link">
+          <span class="nav-icon">🎯</span>
+          <span>Key Markers</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="health-kit.html" class="nav-link active">
+          <span class="nav-icon">📱</span>
+          <span>Health Kit</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="longevity.html" class="nav-link">
+          <span class="nav-icon">⏳</span>
+          <span>Longevity</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="supplements.html" class="nav-link">
+          <span class="nav-icon">💊</span>
+          <span>Supplements</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="meal-plan.html" class="nav-link">
+          <span class="nav-icon">🍽️</span>
+          <span>Meal Plan</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="page-title">Health Kit Import</h1>
+      <p class="page-subtitle">
+        Upload your Apple Health export to analyze steps, heart rate, sleep, workouts, and more. Your data is processed locally and never leaves your browser.
+      </p>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="glass-card" id="uploadSection">
+      <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+        <span class="upload-icon">📱</span>
+        <h2 class="upload-title">Upload Health Kit Export</h2>
+        <p class="upload-subtitle">Drag and drop your export.zip file here, or click to browse</p>
+        <button class="upload-btn">
+          <span>📁</span> Select File
+        </button>
+        <input type="file" id="fileInput" class="upload-input" accept=".zip" onchange="handleFileSelect(event)" />
+      </div>
+
+      <div class="progress-container" id="progressContainer">
+        <div class="progress-label">
+          <span id="progressLabel">Processing...</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+
+      <div class="instructions">
+        <h3 class="instructions-title">
+          <span>📋</span> How to Export Your Health Data
+        </h3>
+        <ol>
+          <li>Open the <strong>Health</strong> app on your iPhone</li>
+          <li>Tap your profile picture in the top-right corner</li>
+          <li>Scroll down and tap <code>Export All Health Data</code></li>
+          <li>Wait for the export to complete (this may take a few minutes)</li>
+          <li>Share/save the <code>export.zip</code> file to your device</li>
+          <li>Upload the ZIP file here</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Data Display Section -->
+    <div class="data-section" id="dataSection">
+
+      <!-- Summary Banner -->
+      <div class="summary-banner" id="summaryBanner">
+        <div class="summary-grid">
+          <div class="summary-item">
+            <div class="summary-value" id="totalRecords">0</div>
+            <div class="summary-label">Total Records</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value" id="dateRange">-</div>
+            <div class="summary-label">Date Range</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value" id="dataTypes">0</div>
+            <div class="summary-label">Data Types</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-value" id="avgSteps">-</div>
+            <div class="summary-label">Avg Daily Steps</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Tabs -->
+      <div class="glass-card">
+        <div class="data-tabs">
+          <button class="data-tab active" onclick="showTab('overview')">Overview</button>
+          <button class="data-tab" onclick="showTab('activity')">Activity</button>
+          <button class="data-tab" onclick="showTab('heart')">Heart</button>
+          <button class="data-tab" onclick="showTab('sleep')">Sleep</button>
+          <button class="data-tab" onclick="showTab('body')">Body</button>
+          <button class="data-tab" onclick="showTab('nutrition')">Nutrition</button>
+        </div>
+
+        <!-- Overview Tab -->
+        <div id="tab-overview" class="tab-content">
+          <div class="data-grid" id="overviewGrid">
+            <!-- Cards will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Activity Tab -->
+        <div id="tab-activity" class="tab-content" style="display: none;">
+          <div class="data-grid" id="activityGrid">
+            <!-- Activity data cards -->
+          </div>
+        </div>
+
+        <!-- Heart Tab -->
+        <div id="tab-heart" class="tab-content" style="display: none;">
+          <div class="data-grid" id="heartGrid">
+            <!-- Heart data cards -->
+          </div>
+        </div>
+
+        <!-- Sleep Tab -->
+        <div id="tab-sleep" class="tab-content" style="display: none;">
+          <div class="data-grid" id="sleepGrid">
+            <!-- Sleep data cards -->
+          </div>
+        </div>
+
+        <!-- Body Tab -->
+        <div id="tab-body" class="tab-content" style="display: none;">
+          <div class="data-grid" id="bodyGrid">
+            <!-- Body measurements cards -->
+          </div>
+        </div>
+
+        <!-- Nutrition Tab -->
+        <div id="tab-nutrition" class="tab-content" style="display: none;">
+          <div class="data-grid" id="nutritionGrid">
+            <!-- Nutrition data cards -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload Another -->
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="upload-btn" onclick="resetUpload()">
+          <span>📁</span> Upload Another File
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- JSZip Library for ZIP extraction -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <script>
+    // Global data store - optimized for large datasets
+    let healthData = {
+      stats: {},        // Aggregated stats by type
+      workoutCount: 0,
+      totalRecords: 0,
+      minDate: null,
+      maxDate: null,
+      dataTypes: new Set(),
+      stepsByDay: {}    // For daily step averages
+    };
+
+    function toggleMobileNav() {
+      document.getElementById('navSidebar').classList.toggle('mobile-open');
+    }
+
+    // Drag and drop handlers
+    const uploadArea = document.getElementById('uploadArea');
+
+    uploadArea.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadArea.classList.add('dragover');
+    });
+
+    uploadArea.addEventListener('dragleave', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('dragover');
+    });
+
+    uploadArea.addEventListener('drop', (e) => {
+      e.preventDefault();
+      uploadArea.classList.remove('dragover');
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        processFile(files[0]);
+      }
+    });
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (file) {
+        processFile(file);
+      }
+    }
+
+    async function processFile(file) {
+      if (!file.name.endsWith('.zip')) {
+        alert('Please upload a ZIP file exported from Apple Health.');
+        return;
+      }
+
+      // Show progress
+      document.getElementById('progressContainer').classList.add('visible');
+      updateProgress(10, 'Extracting ZIP file...');
+
+      try {
+        const zip = await JSZip.loadAsync(file);
+        updateProgress(30, 'Looking for health data...');
+
+        // Find export.xml in the ZIP
+        let exportXml = null;
+        for (const [path, zipEntry] of Object.entries(zip.files)) {
+          if (path.endsWith('export.xml') || path === 'apple_health_export/export.xml') {
+            exportXml = await zipEntry.async('string');
+            break;
+          }
+        }
+
+        if (!exportXml) {
+          throw new Error('Could not find export.xml in the ZIP file. Make sure this is an Apple Health export.');
+        }
+
+        updateProgress(50, 'Parsing health records (this may take a moment for large files)...');
+
+        // Give the UI a chance to update
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // Parse the XML
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(exportXml, 'text/xml');
+
+        // Free up memory
+        exportXml = null;
+
+        updateProgress(60, 'Processing records...');
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+        // Process records incrementally without storing all of them
+        const records = xmlDoc.querySelectorAll('Record');
+        const totalRecords = records.length;
+
+        // Reset healthData
+        healthData = {
+          stats: {},
+          workoutCount: 0,
+          totalRecords: totalRecords,
+          minDate: null,
+          maxDate: null,
+          dataTypes: new Set(),
+          stepsByDay: {}
+        };
+
+        // Process records in chunks to avoid blocking
+        const chunkSize = 10000;
+        for (let i = 0; i < totalRecords; i += chunkSize) {
+          const end = Math.min(i + chunkSize, totalRecords);
+
+          for (let j = i; j < end; j++) {
+            const record = records[j];
+            processRecord(record);
+          }
+
+          // Update progress
+          const progress = 60 + Math.round((i / totalRecords) * 25);
+          updateProgress(progress, `Processing records (${Math.round(i/1000)}k of ${Math.round(totalRecords/1000)}k)...`);
+
+          // Yield to UI
+          if (i + chunkSize < totalRecords) {
+            await new Promise(resolve => setTimeout(resolve, 10));
+          }
+        }
+
+        updateProgress(85, 'Processing workouts...');
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+        // Count workouts
+        const workouts = xmlDoc.querySelectorAll('Workout');
+        healthData.workoutCount = workouts.length;
+
+        updateProgress(90, 'Calculating statistics...');
+        await new Promise(resolve => setTimeout(resolve, 50));
+
+        // Finalize stats
+        finalizeStats();
+
+        updateProgress(100, 'Complete!');
+
+        // Show data section
+        setTimeout(() => {
+          document.getElementById('uploadSection').style.display = 'none';
+          document.getElementById('dataSection').classList.add('visible');
+          displayResults();
+        }, 500);
+
+      } catch (error) {
+        console.error('Error processing file:', error);
+        alert('Error processing file: ' + error.message);
+        document.getElementById('progressContainer').classList.remove('visible');
+      }
+    }
+
+    // Process a single record - called for each record
+    function processRecord(record) {
+      const type = record.getAttribute('type');
+      const value = record.getAttribute('value');
+      const unit = record.getAttribute('unit');
+      const startDate = record.getAttribute('startDate');
+
+      // Track data types
+      healthData.dataTypes.add(type);
+
+      // Track date range
+      if (startDate) {
+        const date = new Date(startDate);
+        if (!isNaN(date)) {
+          if (!healthData.minDate || date < healthData.minDate) {
+            healthData.minDate = date;
+          }
+          if (!healthData.maxDate || date > healthData.maxDate) {
+            healthData.maxDate = date;
+          }
+        }
+
+        // Track steps by day
+        if (type === 'HKQuantityTypeIdentifierStepCount') {
+          const day = startDate.split(' ')[0];
+          if (!healthData.stepsByDay[day]) healthData.stepsByDay[day] = 0;
+          healthData.stepsByDay[day] += parseFloat(value) || 0;
+        }
+      }
+
+      // Initialize stats for this type if needed
+      if (!healthData.stats[type]) {
+        healthData.stats[type] = {
+          count: 0,
+          sum: 0,
+          min: Infinity,
+          max: -Infinity,
+          latest: null,
+          unit: unit
+        };
+      }
+
+      const stats = healthData.stats[type];
+      stats.count++;
+
+      const numValue = parseFloat(value);
+      if (!isNaN(numValue)) {
+        stats.sum += numValue;
+        if (numValue < stats.min) stats.min = numValue;
+        if (numValue > stats.max) stats.max = numValue;
+        stats.latest = numValue;
+      }
+    }
+
+    // Finalize statistics after processing all records
+    function finalizeStats() {
+      for (const type in healthData.stats) {
+        const stats = healthData.stats[type];
+        if (stats.count > 0 && stats.sum > 0) {
+          stats.avg = stats.sum / stats.count;
+        }
+        // Clean up Infinity values
+        if (stats.min === Infinity) stats.min = null;
+        if (stats.max === -Infinity) stats.max = null;
+      }
+    }
+
+    function updateProgress(percent, label) {
+      document.getElementById('progressBar').style.width = percent + '%';
+      document.getElementById('progressPercent').textContent = percent + '%';
+      document.getElementById('progressLabel').textContent = label;
+    }
+
+    function displayResults() {
+      updateSummary();
+      populateOverview();
+      populateActivityTab();
+      populateHeartTab();
+      populateSleepTab();
+      populateBodyTab();
+      populateNutritionTab();
+    }
+
+    function updateSummary() {
+      document.getElementById('totalRecords').textContent = healthData.totalRecords.toLocaleString();
+
+      if (healthData.minDate && healthData.maxDate) {
+        document.getElementById('dateRange').textContent =
+          `${healthData.minDate.toLocaleDateString()} - ${healthData.maxDate.toLocaleDateString()}`;
+      }
+
+      document.getElementById('dataTypes').textContent = healthData.dataTypes.size;
+
+      // Calculate average daily steps
+      const days = Object.keys(healthData.stepsByDay);
+      if (days.length > 0) {
+        let totalSteps = 0;
+        for (const day of days) {
+          totalSteps += healthData.stepsByDay[day];
+        }
+        const avgSteps = Math.round(totalSteps / days.length);
+        document.getElementById('avgSteps').textContent = avgSteps.toLocaleString();
+      }
+    }
+
+    function createDataCard(icon, title, subtitle, value, unit, trend) {
+      return `
+        <div class="data-card">
+          <div class="data-card-header">
+            <div class="data-card-icon">${icon}</div>
+            <div>
+              <div class="data-card-title">${title}</div>
+              <div class="data-card-subtitle">${subtitle}</div>
+            </div>
+          </div>
+          <div class="data-card-value">${value}</div>
+          <div class="data-card-unit">${unit}</div>
+          ${trend ? `<div class="data-card-trend ${trend.type}">${trend.icon} ${trend.text}</div>` : ''}
+        </div>
+      `;
+    }
+
+    function populateOverview() {
+      const stats = healthData.stats;
+      const grid = document.getElementById('overviewGrid');
+      let html = '';
+
+      // Steps
+      if (stats['HKQuantityTypeIdentifierStepCount']) {
+        const s = stats['HKQuantityTypeIdentifierStepCount'];
+        html += createDataCard('👟', 'Steps', `${s.count.toLocaleString()} records`,
+          Math.round(s.latest || s.avg || 0).toLocaleString(), 'steps (latest)',
+          { type: 'up', icon: '↑', text: 'Active' });
+      }
+
+      // Heart Rate
+      if (stats['HKQuantityTypeIdentifierHeartRate']) {
+        const s = stats['HKQuantityTypeIdentifierHeartRate'];
+        html += createDataCard('❤️', 'Heart Rate', 'Average',
+          Math.round(s.avg || 0), 'bpm',
+          s.min && s.max ? { type: 'neutral', icon: '●', text: `${Math.round(s.min)}-${Math.round(s.max)} range` } : null);
+      }
+
+      // Resting Heart Rate
+      if (stats['HKQuantityTypeIdentifierRestingHeartRate']) {
+        const s = stats['HKQuantityTypeIdentifierRestingHeartRate'];
+        html += createDataCard('💜', 'Resting HR', 'Average',
+          Math.round(s.avg || 0), 'bpm');
+      }
+
+      // HRV
+      if (stats['HKQuantityTypeIdentifierHeartRateVariabilitySDNN']) {
+        const s = stats['HKQuantityTypeIdentifierHeartRateVariabilitySDNN'];
+        html += createDataCard('📊', 'HRV', 'Average',
+          Math.round(s.avg || 0), 'ms');
+      }
+
+      // Sleep
+      if (stats['HKCategoryTypeIdentifierSleepAnalysis']) {
+        const s = stats['HKCategoryTypeIdentifierSleepAnalysis'];
+        html += createDataCard('😴', 'Sleep Records', 'Total',
+          s.count.toLocaleString(), 'records');
+      }
+
+      // Active Energy
+      if (stats['HKQuantityTypeIdentifierActiveEnergyBurned']) {
+        const s = stats['HKQuantityTypeIdentifierActiveEnergyBurned'];
+        html += createDataCard('🔥', 'Active Calories', 'Daily Average',
+          Math.round(s.avg || 0), 'kcal');
+      }
+
+      // Distance (use sum instead of values array)
+      if (stats['HKQuantityTypeIdentifierDistanceWalkingRunning']) {
+        const s = stats['HKQuantityTypeIdentifierDistanceWalkingRunning'];
+        html += createDataCard('🚶', 'Distance', 'Total',
+          (s.sum / 1000).toFixed(1), 'km');
+      }
+
+      // Workouts
+      if (healthData.workoutCount > 0) {
+        html += createDataCard('💪', 'Workouts', 'Total',
+          healthData.workoutCount.toLocaleString(), 'sessions');
+      }
+
+      grid.innerHTML = html || '<p style="color: #6b7280;">No overview data available.</p>';
+    }
+
+    function populateActivityTab() {
+      const stats = healthData.stats;
+      const grid = document.getElementById('activityGrid');
+      let html = '';
+
+      const activityTypes = [
+        ['HKQuantityTypeIdentifierStepCount', '👟', 'Steps'],
+        ['HKQuantityTypeIdentifierDistanceWalkingRunning', '🚶', 'Walking/Running Distance'],
+        ['HKQuantityTypeIdentifierDistanceCycling', '🚴', 'Cycling Distance'],
+        ['HKQuantityTypeIdentifierFlightsClimbed', '🪜', 'Flights Climbed'],
+        ['HKQuantityTypeIdentifierActiveEnergyBurned', '🔥', 'Active Energy'],
+        ['HKQuantityTypeIdentifierBasalEnergyBurned', '⚡', 'Basal Energy'],
+        ['HKQuantityTypeIdentifierAppleExerciseTime', '⏱️', 'Exercise Time'],
+        ['HKQuantityTypeIdentifierAppleStandTime', '🧍', 'Stand Time']
+      ];
+
+      activityTypes.forEach(([type, icon, name]) => {
+        if (stats[type]) {
+          const s = stats[type];
+          html += createDataCard(icon, name, `${s.count.toLocaleString()} records`,
+            s.avg ? Math.round(s.avg).toLocaleString() : s.count.toLocaleString(),
+            s.unit || 'records');
+        }
+      });
+
+      grid.innerHTML = html || '<p style="color: #6b7280;">No activity data available.</p>';
+    }
+
+    function populateHeartTab() {
+      const stats = healthData.stats;
+      const grid = document.getElementById('heartGrid');
+      let html = '';
+
+      const heartTypes = [
+        ['HKQuantityTypeIdentifierHeartRate', '❤️', 'Heart Rate'],
+        ['HKQuantityTypeIdentifierRestingHeartRate', '💜', 'Resting Heart Rate'],
+        ['HKQuantityTypeIdentifierWalkingHeartRateAverage', '🚶‍♂️', 'Walking HR Average'],
+        ['HKQuantityTypeIdentifierHeartRateVariabilitySDNN', '📊', 'Heart Rate Variability'],
+        ['HKQuantityTypeIdentifierVO2Max', '🫁', 'VO2 Max'],
+        ['HKQuantityTypeIdentifierOxygenSaturation', '💨', 'Blood Oxygen'],
+        ['HKQuantityTypeIdentifierRespiratoryRate', '🌬️', 'Respiratory Rate']
+      ];
+
+      heartTypes.forEach(([type, icon, name]) => {
+        if (stats[type]) {
+          const s = stats[type];
+          html += createDataCard(icon, name, `${s.count.toLocaleString()} records`,
+            s.avg ? s.avg.toFixed(1) : '-',
+            s.unit || '');
+        }
+      });
+
+      grid.innerHTML = html || '<p style="color: #6b7280;">No heart data available.</p>';
+    }
+
+    function populateSleepTab() {
+      const stats = healthData.stats;
+      const grid = document.getElementById('sleepGrid');
+      let html = '';
+
+      const sleepTypes = [
+        ['HKCategoryTypeIdentifierSleepAnalysis', '😴', 'Sleep Analysis'],
+        ['HKDataTypeSleepDurationGoal', '🎯', 'Sleep Goal'],
+        ['HKCategoryTypeIdentifierSleepChanges', '🔄', 'Sleep Changes']
+      ];
+
+      sleepTypes.forEach(([type, icon, name]) => {
+        if (stats[type]) {
+          const s = stats[type];
+          html += createDataCard(icon, name, `${s.count.toLocaleString()} records`,
+            s.count.toLocaleString(), 'entries');
+        }
+      });
+
+      grid.innerHTML = html || '<p style="color: #6b7280;">No sleep data available.</p>';
+    }
+
+    function populateBodyTab() {
+      const stats = healthData.stats;
+      const grid = document.getElementById('bodyGrid');
+      let html = '';
+
+      const bodyTypes = [
+        ['HKQuantityTypeIdentifierBodyMass', '⚖️', 'Weight'],
+        ['HKQuantityTypeIdentifierHeight', '📏', 'Height'],
+        ['HKQuantityTypeIdentifierBodyMassIndex', '📊', 'BMI'],
+        ['HKQuantityTypeIdentifierBodyFatPercentage', '🏋️', 'Body Fat %'],
+        ['HKQuantityTypeIdentifierLeanBodyMass', '💪', 'Lean Body Mass'],
+        ['HKQuantityTypeIdentifierWaistCircumference', '📐', 'Waist Circumference']
+      ];
+
+      bodyTypes.forEach(([type, icon, name]) => {
+        if (stats[type]) {
+          const s = stats[type];
+          html += createDataCard(icon, name, `Latest: ${s.latest ? s.latest.toFixed(1) : '-'}`,
+            s.avg ? s.avg.toFixed(1) : '-',
+            s.unit || '');
+        }
+      });
+
+      grid.innerHTML = html || '<p style="color: #6b7280;">No body measurement data available.</p>';
+    }
+
+    function populateNutritionTab() {
+      const stats = healthData.stats;
+      const grid = document.getElementById('nutritionGrid');
+      let html = '';
+
+      const nutritionTypes = [
+        ['HKQuantityTypeIdentifierDietaryEnergyConsumed', '🍽️', 'Calories'],
+        ['HKQuantityTypeIdentifierDietaryProtein', '🥩', 'Protein'],
+        ['HKQuantityTypeIdentifierDietaryCarbohydrates', '🍞', 'Carbohydrates'],
+        ['HKQuantityTypeIdentifierDietaryFatTotal', '🥑', 'Total Fat'],
+        ['HKQuantityTypeIdentifierDietaryFiber', '🥬', 'Fiber'],
+        ['HKQuantityTypeIdentifierDietarySugar', '🍬', 'Sugar'],
+        ['HKQuantityTypeIdentifierDietaryWater', '💧', 'Water'],
+        ['HKQuantityTypeIdentifierDietaryCaffeine', '☕', 'Caffeine']
+      ];
+
+      nutritionTypes.forEach(([type, icon, name]) => {
+        if (stats[type]) {
+          const s = stats[type];
+          html += createDataCard(icon, name, `${s.count.toLocaleString()} entries`,
+            s.avg ? s.avg.toFixed(1) : '-',
+            s.unit || '');
+        }
+      });
+
+      grid.innerHTML = html || '<p style="color: #6b7280;">No nutrition data available.</p>';
+    }
+
+    function showTab(tabName) {
+      // Update tab buttons
+      document.querySelectorAll('.data-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Update tab content
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.style.display = 'none';
+      });
+      document.getElementById('tab-' + tabName).style.display = 'block';
+    }
+
+    function resetUpload() {
+      document.getElementById('uploadSection').style.display = 'block';
+      document.getElementById('dataSection').classList.remove('visible');
+      document.getElementById('progressContainer').classList.remove('visible');
+      document.getElementById('progressBar').style.width = '0%';
+      document.getElementById('fileInput').value = '';
+      healthData = {
+        stats: {},
+        workoutCount: 0,
+        totalRecords: 0,
+        minDate: null,
+        maxDate: null,
+        dataTypes: new Set(),
+        stepsByDay: {}
+      };
+    }
+  </script>
+
+</body>
+</html>
